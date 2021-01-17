@@ -1,9 +1,11 @@
 ﻿using System;
 
-namespace _01_Class_Box_Data
+namespace P01_Class_Box_Data
 {
     public class Box
     {
+        private const double INVALID_SIDE = 0;
+
         private double length;
         private double width;
         private double height;
@@ -12,15 +14,18 @@ namespace _01_Class_Box_Data
         {
             this.Length = length;
             this.Width = width;
-            this.Height = height;
+            this.Heigth = height;
         }
 
         public double Length
         {
-            get => this.length;
+            get
+            {
+                return this.length;
+            }
             private set
             {
-                if (value <= 0)
+                if (value <= INVALID_SIDE)
                 {
                     throw new ArgumentException("Length cannot be zero or negative.");
                 }
@@ -31,10 +36,13 @@ namespace _01_Class_Box_Data
 
         public double Width
         {
-            get => this.width;
+            get
+            {
+                return this.width;
+            }
             private set
             {
-                if (value <= 0)
+                if (value <= INVALID_SIDE)
                 {
                     throw new ArgumentException("Width cannot be zero or negative.");
                 }
@@ -43,35 +51,43 @@ namespace _01_Class_Box_Data
             }
         }
 
-        public double Height
+        public double Heigth
         {
-            get => this.height;
+            get
+            {
+                return this.height;
+            }
             private set
             {
-                if (value <= 0)
+                if (value <= INVALID_SIDE)
                 {
                     throw new ArgumentException("Height cannot be zero or negative.");
                 }
+
                 this.height = value;
             }
         }
 
         public string SurfaceArea()
         {
-            var currResult = (2 * (length * width)) + (2 * (length * height)) + (2 * (width * height));
-            return $"Surface Area - {currResult:F2}";
+            double surfaceArea = (2 * (this.Length * this.Width)) + (2 * (this.Length * this.Heigth)) + (2 * (this.Width * this.Heigth));
+
+            return $"Surface Area - {surfaceArea:F2}";
         }
 
         public string LateralSurfaceArea()
         {
-            var currResult = (2 * (length * height)) + (2 * (width * height));
-            return $"Lateral Surface Area - {currResult:F2}";
+
+            double lateralSurfaceArea = (2 * (this.Length * this.Heigth)) + (2 * (this.Width * this.Heigth));
+
+            return $"Lateral Surface Area - {lateralSurfaceArea:F2}";
         }
 
         public string Volume()
         {
-            var currResult = (length * width * height);
-            return $"Volume - {currResult:F2}";
+            double volume = (this.Length * this.Width * this.Heigth);
+
+            return $"Volume - {volume:F2}";
         }
     }
 }

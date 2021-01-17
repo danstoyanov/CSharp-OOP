@@ -9,8 +9,7 @@ namespace AnimalFarm.Models
 
         private string name;
         private int age;
-
-        public Chicken(string name, int age)
+        internal Chicken(string name, int age)
         {
             this.Name = name;
             this.Age = age;
@@ -22,10 +21,9 @@ namespace AnimalFarm.Models
             {
                 return this.name;
             }
-
             private set
             {
-                if (String.IsNullOrWhiteSpace(value) || String.IsNullOrEmpty(value))
+                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
                 {
                     throw new ArgumentException("Name cannot be empty.");
                 }
@@ -40,12 +38,11 @@ namespace AnimalFarm.Models
             {
                 return this.age;
             }
-
             private set
             {
                 if (value < MinAge || value > MaxAge)
                 {
-                    throw new ArgumentException($"Age should be between {MinAge} and {MaxAge}.");
+                    throw new ArgumentException("Age should be between 0 and 15.");
                 }
 
                 this.age = value;
@@ -54,10 +51,10 @@ namespace AnimalFarm.Models
 
         public double ProductPerDay
         {
-            get
-            {
-                return this.CalculateProductPerDay();
-            }
+			get
+			{				
+				return this.CalculateProductPerDay();
+			}
         }
 
         private double CalculateProductPerDay()

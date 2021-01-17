@@ -2,7 +2,7 @@
 {
     using System;
     using AnimalFarm.Models;
-    class Program
+    public class Program
     {
         static void Main()
         {
@@ -18,9 +18,9 @@
                     chicken.Age,
                     chicken.ProductPerDay);
             }
-            catch (ArgumentException message)
+            catch (Exception exception)
             {
-                Console.WriteLine(message.Message);
+                Console.WriteLine(exception.Message);
             }
         }
     }
