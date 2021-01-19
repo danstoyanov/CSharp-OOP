@@ -1,22 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
 
-namespace P03_Shopping_Spree
+using P03_Shopping_Spree_Second_Solution.Common;
+
+namespace P03_Shopping_Spree_Second_Solution.Models
 {
     public class Product
     {
-        private const double MIN_COST_VALUE = 0;
+        private const decimal MIN_VALUE = 0;
 
         private string name;
-        private double money;
+        private decimal cost;
 
-        public Product(string name, double money)
+        public Product(string name, decimal cost)
         {
             this.Name = name;
-            this.Money = money;
+            this.Cost = cost;
         }
 
-       public string Name
+        public string Name
         {
             get
             {
@@ -26,30 +27,28 @@ namespace P03_Shopping_Spree
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentException("Money cannot be negative");
+                    throw new ArgumentException(GlobalConstants.INVALID_NAME_MSG_EXC);
                 }
 
                 this.name = value;
             }
         }
 
-        public double Money
+        public decimal Cost
         {
             get
             {
-                return this.money;
+                return this.cost;
             }
             private set
             {
-                if (value < MIN_COST_VALUE)
+                if (value < MIN_VALUE)
                 {
                     throw new ArgumentException("Money cannot be negative");
                 }
 
-                this.money = value;
+                this.cost = value;
             }
         }
-
-        // Bag with Products !!! 
     }
 }

@@ -1,12 +1,19 @@
 ﻿using System;
 
-namespace P03_Shopping_Spree
+using P03_Shopping_Spree_Second_Solution.Models;
+
+namespace P03_Shopping_Spree_Second_Solution
 {
-    public class StartUp
+    public class Program
     {
-        public static void Main()
+        static void Main()
         {
-           
+            string milk = "Krave mlqko";
+            decimal cost = 1.95m;
+
+            Product product = new Product(milk, cost);
+
+
         }
     }
 }
