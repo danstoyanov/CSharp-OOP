@@ -2,7 +2,7 @@
 
 namespace P04_Pizza_Calories
 {
-    public class Program
+    public class StartUp
     {
         static void Main()
         {
