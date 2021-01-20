@@ -12,8 +12,6 @@ namespace P03_Shopping_Spree_Second_Solution
             decimal cost = 1.95m;
 
             Product product = new Product(milk, cost);
-
-
         }
     }
 }
