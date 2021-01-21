@@ -18,15 +18,15 @@ namespace P04_Pizza_Calories.Ingredients
 
         private readonly Dictionary<string, double> DeffFlourType = new Dictionary<string, double>()
         {
-            {"White",1.5},
-            {"Wholegrain", 1.0 }
+            {"white",1.5},
+            {"wholegrain", 1.0 }
         };
 
         private readonly Dictionary<string, double> DeffBakingTechnique = new Dictionary<string, double>()
         {
-            {"Crispy", 0.9 },
-            {"Chewy", 1.1 },
-            {"Homemade", 1.0 }
+            {"crispy", 0.9 },
+            {"chewy", 1.1 },
+            {"homemade", 1.0 }
         };
 
         private string flourType;
@@ -48,12 +48,12 @@ namespace P04_Pizza_Calories.Ingredients
             }
             private set
             {
-                if (!DeffFlourType.ContainsKey(value))
+                if (!DeffFlourType.ContainsKey(value.ToLower()))
                 {
                     throw new ArgumentException(INVALID_FLOUR_TYPE_MSG);
                 }
 
-                this.flourType = value;
+                this.flourType = value.ToLower();
             }
         }
 
@@ -65,12 +65,12 @@ namespace P04_Pizza_Calories.Ingredients
             }
             private set
             {
-                if (!DeffBakingTechnique.ContainsKey(value))
+                if (!DeffBakingTechnique.ContainsKey(value.ToLower()))
                 {
                     throw new ArgumentException(INVALID_BAKING_TECH_MSG);
                 }
 
-                this.bakingTechnique = value;
+                this.bakingTechnique = value.ToLower();
             }
         }
 
