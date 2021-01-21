@@ -9,11 +9,20 @@ namespace P04_Pizza_Calories
     {
         static void Main()
         {
-            Dough dough = new Dough("White", "Chewy", 100);
-            Console.WriteLine(dough.CaloriesPerGrams* 100);
+            try
+            {
+                Dough dough = new Dough("White", "Chewy", 100);
+                Topping ketchup = new Topping("Meat", 500);
 
-        //   Engine engine = new Engine();
-        //   engine.Run();
+            }
+            catch (Exception em)
+            {
+                Console.WriteLine(em.Message);
+            }
+
+
+            //   Engine engine = new Engine();
+            //   engine.Run();
         }
     }
 }
