@@ -18,20 +18,20 @@ namespace P04_Pizza_Calories.Ingredients
             {"sauce", 0.9 }
         };
 
-        private string modifire;
+        private string type;
         private double grams;
 
         public Topping(string modifire, double grams)
         {
-            this.Modifire = modifire;
+            this.Type = modifire;
             this.Grams = grams;
         }
 
-        public string Modifire
+        public string Type
         {
             get
             {
-                return this.modifire;
+                return this.type;
             }
             private set
             {
@@ -40,7 +40,7 @@ namespace P04_Pizza_Calories.Ingredients
                     throw new ArgumentException(String.Format(INVALID_TOPPING_MSG, value));
                 }
 
-                this.modifire = value;
+                this.type = value;
             }
         }
 
@@ -54,7 +54,7 @@ namespace P04_Pizza_Calories.Ingredients
             {
                 if (value < MIN_TOPPING_VALUE || value > MAX_TOPPING_VALUE)
                 {
-                    throw new ArgumentException(string.Format(INVALID_VALUE_EXC_MSG, this.Modifire));
+                    throw new ArgumentException(string.Format(INVALID_VALUE_EXC_MSG, this.Type));
                 }
 
                 this.grams = value;

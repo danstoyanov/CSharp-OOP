@@ -9,12 +9,9 @@ namespace P04_Pizza_Calories.Ingredients
     {
         private const string INVALID_FLOUR_TYPE_MSG = "Invalid type of dough.";
         private const string INVALID_BAKING_TECH_MSG = "Invalid baking technique";
-
         private const int MIN_CAL_RANGE_EXC_VALUE = 1;
         private const int MAX_CAL_RANGE_EXC_VALUE = 200;
         private const string CAL_RANGE_EXC_MSG = "Dough weight should be in the range [1..200].";
-
-        private const int BASE_CALORIES_PER_GRAM = 2;
 
         private readonly Dictionary<string, double> DeffFlourType = new Dictionary<string, double>()
         {
