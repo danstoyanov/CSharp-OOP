@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 
+using P04_Pizza_Calories.Common;
+
 namespace P04_Pizza_Calories.Ingredients
 {
     public class Topping
     {
-        private const string INVALID_TOPPING_MSG = "Cannot place {0} on top of your pizza.";
         private const double MIN_TOPPING_VALUE = 1;
         private const double MAX_TOPPING_VALUE = 50;
         private const string INVALID_VALUE_EXC_MSG = "{0} weight should be in the range [1..50].";
+        private const string INVALID_TOPPING_MSG = "Cannot place {0} on top of your pizza.";
 
         private readonly Dictionary<string, double> DeffToppingModifires = new Dictionary<string, double>()
         {
@@ -21,9 +23,9 @@ namespace P04_Pizza_Calories.Ingredients
         private string type;
         private double grams;
 
-        public Topping(string modifire, double grams)
+        public Topping(string type, double grams)
         {
-            this.Type = modifire;
+            this.Type = type;
             this.Grams = grams;
         }
 
@@ -54,11 +56,13 @@ namespace P04_Pizza_Calories.Ingredients
             {
                 if (value < MIN_TOPPING_VALUE || value > MAX_TOPPING_VALUE)
                 {
-                    throw new ArgumentException(string.Format(INVALID_VALUE_EXC_MSG, this.Type));
+                    throw new ArgumentException(String.Format(INVALID_VALUE_EXC_MSG, this.Type));
                 }
 
                 this.grams = value;
             }
         }
+
+        public double CaloriesPerGram => GlobalConstants.BASE_CALORIES_PER_GRAM * this.DeffToppingModifires[this.Type];
     }
 }
