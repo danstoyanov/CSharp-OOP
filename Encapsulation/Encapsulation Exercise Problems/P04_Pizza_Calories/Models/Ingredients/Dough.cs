@@ -89,5 +89,7 @@ namespace P04_Pizza_Calories.Ingredients
         }
 
         public double CaloriesPerGrams => GlobalConstants.BASE_CALORIES_PER_GRAM * DeffFlourType[this.FlourType] * DeffBakingTechnique[this.BakingTechnique];
+
+        public double TotalCalories => this.CaloriesPerGrams * this.Grams;
     }
 }

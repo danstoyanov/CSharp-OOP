@@ -42,7 +42,7 @@ namespace P04_Pizza_Calories.Ingredients
                     throw new ArgumentException(String.Format(INVALID_TOPPING_MSG, value));
                 }
 
-                this.type = value;
+                this.type = value.ToLower();
             }
         }
 
@@ -64,5 +64,7 @@ namespace P04_Pizza_Calories.Ingredients
         }
 
         public double CaloriesPerGram => GlobalConstants.BASE_CALORIES_PER_GRAM * this.DeffToppingModifires[this.Type];
+
+        public double TotalCalories => this.CaloriesPerGram * this.Grams;
     }
 }

@@ -17,34 +17,44 @@ namespace P04_Pizza_Calories
         private Dough dough;
         private readonly List<Topping> toppings;
 
+        public Pizza(string name)
+        {
+            this.Name = name;
+            this.toppings = new List<Topping>();
+        }
+
         public string Name
         {
             get
-            { 
-                return name; 
+            {
+                return name;
             }
-            private set 
-            { 
+            private set
+            {
                 if (string.IsNullOrWhiteSpace(value) || value.Length < MIN_NAME_SYMBOLS || value.Length > MAX_NAME_SYMBOLS)
                 {
                     throw new ArgumentException(INVALID_NAME_EXC_MSG);
                 }
 
-                name = value; 
+                name = value;
             }
         }
 
         public Dough Dough
         {
-            get 
-            { 
-                return this.dough; 
+            get
+            {
+                return this.dough;
             }
-            private set 
-            { 
-                dough = value; 
+            set
+            {
+                dough = value;
             }
         }
+
+        public int CountOfToppings => toppings.Count;
+
+        public double TotalCalories => CalculateTotalCalories();
 
         public void AddTopping(Topping topping)
         {
@@ -54,6 +64,18 @@ namespace P04_Pizza_Calories
             }
 
             this.toppings.Add(topping);
+        }
+
+        private double CalculateTotalCalories()
+        {
+            double currentCalores = this.Dough.TotalCalories;
+
+            foreach (Topping topping in this.toppings)
+            {
+                currentCalores += topping.TotalCalories;
+            }
+
+            return currentCalores;
         }
     }
 }
