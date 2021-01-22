@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace P01_Shapes
+namespace Shapes
 {
     public class StartUp
     {
@@ -15,7 +15,6 @@ namespace P01_Shapes
 
             circle.Draw();
             rect.Draw();
-
         }
     }
 }

@@ -1,10 +1,7 @@
-﻿namespace P01_Shapes
+﻿namespace Shapes
 {
     public interface IDrawable
     {
-        void Draw()
-        {
-            
-        }
+        void Draw();
     }
 }

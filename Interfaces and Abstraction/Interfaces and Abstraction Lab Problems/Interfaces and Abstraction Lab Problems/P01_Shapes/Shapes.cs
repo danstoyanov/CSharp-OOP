@@ -1,4 +1,4 @@
-﻿namespace P01_Shapes
+﻿namespace Shapes
 {
     public class Shapes
     {
