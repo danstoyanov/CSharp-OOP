@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Interfaces_and_Abstraction_Exercise_Problems</RootNamespace>
+  </PropertyGroup>
+
+</Project>
