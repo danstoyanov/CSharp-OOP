@@ -4,9 +4,9 @@ namespace P04_Border_Control
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+
         }
     }
 }
