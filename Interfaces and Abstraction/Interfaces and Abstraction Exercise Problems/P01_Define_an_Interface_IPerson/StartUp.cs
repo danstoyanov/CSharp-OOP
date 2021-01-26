@@ -12,6 +12,9 @@ namespace PersonInfo
             IPerson person = new Citizen(name, age);
             Console.WriteLine(person.Name);
             Console.WriteLine(person.Age);
+
+         //   Type type = person.GetType();
+         //   Citizen citizen = (Citizen)Convert.ChangeType(person, type);
         }
     }
 }
