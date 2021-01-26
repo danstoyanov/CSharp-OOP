@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Interfaces_and_Abstraction_Exercise_Problems
+namespace P02_Multiple_Implementation
 {
     class Program
     {
