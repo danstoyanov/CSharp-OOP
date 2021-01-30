@@ -2,11 +2,11 @@
 
 namespace P06_Food_Shortage
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+
         }
     }
 }
