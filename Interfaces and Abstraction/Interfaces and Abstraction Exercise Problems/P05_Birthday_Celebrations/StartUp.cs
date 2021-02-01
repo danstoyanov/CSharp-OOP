@@ -1,12 +1,14 @@
-﻿using System;
+﻿using P04_Border_Control.Core;
+using System;
 
-namespace P05_Birthday_Celebrations
+namespace P04_Border_Control
 {
-    class Program
+    class StartUp
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+            Engine engine = new Engine();
+            engine.Run();
         }
     }
 }
