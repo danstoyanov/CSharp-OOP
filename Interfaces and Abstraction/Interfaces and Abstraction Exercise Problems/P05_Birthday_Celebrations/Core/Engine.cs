@@ -2,18 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using P04_Border_Control.Contracts;
 using P04_Border_Control.Models;
+using P04_Border_Control.Contracts;
+using P05_Birthday_Celebrations.Models;
+using P05_Birthday_Celebrations.Contracts;
 
 namespace P04_Border_Control.Core
 {
     public class Engine : IEngine
     {
         private readonly List<IInhabitants> inhabitans;
+        private readonly List<IBirthdates> birthdates;
 
         public Engine()
         {
             this.inhabitans = new List<IInhabitants>();
+            this.birthdates = new List<IBirthdates>();
         }
 
         public void Run()
@@ -26,16 +30,18 @@ namespace P04_Border_Control.Core
                     .Split(" ")
                     .ToArray();
 
-                if (args.Length == 3)
+                if (args[0] == "Citizen")
                 {
-                    string name = args[0];
-                    string age = args[1];
-                    string id = args[2];
+                    string name = args[1];
+                    string age = args[2];
+                    string id = args[3];
+                    string birthdate = args[4];
 
-                    Citizen citizen = new Citizen(name, age, id);
+                    Citizen citizen = new Citizen(name, age, id, birthdate);
                     this.inhabitans.Add(citizen);
+                    this.birthdates.Add(citizen);
                 }
-                else
+                else if (args[0] == "Robot")
                 {
                     string model = args[0];
                     string id = args[1];
@@ -43,15 +49,23 @@ namespace P04_Border_Control.Core
                     Robot robot = new Robot(model, id);
                     this.inhabitans.Add(robot);
                 }
+                else if (args[0] == "Pet")
+                {
+                    string name = args[1];
+                    string birthdate = args[2];
+
+                    Pet pet = new Pet(name, birthdate);
+                    this.birthdates.Add(pet);
+                }
             }
 
             string lastDigits = Console.ReadLine();
 
-            foreach (var inhabitan in this.inhabitans)
+            foreach (var inhabitan in this.birthdates)
             {
-                if (inhabitan.Id.EndsWith(lastDigits))
+                if (inhabitan.Birthdate.EndsWith(lastDigits))
                 {
-                    Console.WriteLine(inhabitan.Id);
+                    Console.WriteLine(inhabitan.Birthdate);
                 }
             }
         }

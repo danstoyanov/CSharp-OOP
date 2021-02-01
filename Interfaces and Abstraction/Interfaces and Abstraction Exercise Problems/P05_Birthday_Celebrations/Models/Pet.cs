@@ -1,8 +1,10 @@
-﻿using P05_Birthday_Celebrations.Contracts;
+﻿using System;
+
+using P05_Birthday_Celebrations.Contracts;
 
 namespace P05_Birthday_Celebrations.Models
 {
-    public class Pet : IPet
+    public class Pet : IPet, IBirthdates
     {
         public Pet(string name, string birthdate)
         {
@@ -11,6 +13,7 @@ namespace P05_Birthday_Celebrations.Models
         }
 
         public string Name { get; private set; }
+
         public string Birthdate { get; private set; }
     }
 }
