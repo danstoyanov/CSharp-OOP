@@ -4,21 +4,15 @@ using P05_Birthday_Celebrations.Contracts;
 
 namespace P05_Birthday_Celebrations.Models
 {
-    public class Citizen : ICitizen, IInhabitants, IBirthdates
+    public class Pet : IPet, IBirthdates
     {
-        public Citizen(string name, string age, string id, string birthdate)
+        public Pet(string name, string birthdate)
         {
             this.Name = name;
-            this.Age = age;
-            this.Id = id;
             this.Birthdate = birthdate;
         }
 
         public string Name { get; private set; }
-
-        public string Age { get; private set; }
-
-        public string Id { get; private set; }
 
         public string Birthdate { get; private set; }
     }

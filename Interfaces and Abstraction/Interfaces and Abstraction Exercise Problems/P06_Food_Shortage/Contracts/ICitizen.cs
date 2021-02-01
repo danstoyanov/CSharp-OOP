@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace P05_Birthday_Celebrations.Contracts
+namespace P04_Border_Control.Contracts
 {
     public interface ICitizen
     {

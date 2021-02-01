@@ -1,7 +1,8 @@
-﻿using P04_Border_Control.Core;
-using System;
+﻿using System;
 
-namespace P04_Border_Control
+using P05_Birthday_Celebrations.Core;
+
+namespace P05_Birthday_Celebrations
 {
     class StartUp
     {

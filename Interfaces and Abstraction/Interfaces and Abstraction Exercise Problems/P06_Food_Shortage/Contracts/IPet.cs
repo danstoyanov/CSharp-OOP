@@ -2,10 +2,8 @@
 
 namespace P05_Birthday_Celebrations.Contracts
 {
-    public interface ICitizen
+    public interface IPet
     {
         public string Name { get; }
-        public string Age { get; }
-        public string Id { get; }
     }
 }

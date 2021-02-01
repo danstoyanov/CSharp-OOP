@@ -1,7 +1,6 @@
-﻿
-using P05_Birthday_Celebrations.Contracts;
+﻿using P04_Border_Control.Contracts;
 
-namespace P05_Birthday_Celebrations.Models
+namespace P04_Border_Control.Models
 {
     public class Robot : IRobot, IInhabitants
     {

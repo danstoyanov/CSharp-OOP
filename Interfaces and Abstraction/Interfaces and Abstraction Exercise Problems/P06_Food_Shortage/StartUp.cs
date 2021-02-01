@@ -1,12 +1,14 @@
-﻿using System;
+﻿using P04_Border_Control.Core;
+using System;
 
-namespace P06_Food_Shortage
+namespace P04_Border_Control
 {
-    public class Program
+    class StartUp
     {
         static void Main()
         {
-
+            Engine engine = new Engine();
+            engine.Run();
         }
     }
 }

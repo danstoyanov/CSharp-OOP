@@ -1,8 +1,9 @@
 ﻿using System;
 
+using P04_Border_Control.Contracts;
 using P05_Birthday_Celebrations.Contracts;
 
-namespace P05_Birthday_Celebrations.Models
+namespace P04_Border_Control.Models
 {
     public class Citizen : ICitizen, IInhabitants, IBirthdates
     {
