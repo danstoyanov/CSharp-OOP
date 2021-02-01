@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
 
 using P06_Food_Shortage.Models;
 using P06_Food_Shortage.Contracts;
@@ -10,61 +10,47 @@ namespace P06_Food_Shortage.Core
     public class Engine : IEngine
     {
         private readonly List<IInhabitants> inhabitans;
-        private readonly List<IBirthdates> birthdates;
-
         public Engine()
         {
             this.inhabitans = new List<IInhabitants>();
-            this.birthdates = new List<IBirthdates>();
         }
 
         public void Run()
         {
+            int num = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < num; i++)
+            {
+                string[] args = Console.ReadLine()
+                    .Split(" ")
+                    .ToArray();
+
+                if (args.Length == 4)
+                {
+                    string name = args[0];
+                    string age = args[1];
+                    string id = args[2];
+                    string birthdate = args[3];
+
+                    Citizen citizen = new Citizen(name, age, id, birthdate);
+                    this.inhabitans.Add(citizen);
+                }
+                else if (args.Length == 3)
+                {
+                    string name = args[0];
+                    string age = args[1];
+                    string group = args[2];
+
+                    Rebel rebel = new Rebel(name, age, group);
+                    this.inhabitans.Add(rebel);
+                }
+            }
+
             string command;
 
             while ((command = Console.ReadLine()) != "End")
             {
-                string[] args = command
-                    .Split(" ")
-                    .ToArray();
 
-                if (args[0] == "Citizen")
-                {
-                    string name = args[1];
-                    string age = args[2];
-                    string id = args[3];
-                    string birthdate = args[4];
-
-                    Citizen citizen = new Citizen(name, age, id, birthdate);
-                    this.inhabitans.Add(citizen);
-                    this.birthdates.Add(citizen);
-                }
-                else if (args[0] == "Robot")
-                {
-                    string model = args[0];
-                    string id = args[1];
-
-                    Robot robot = new Robot(model, id);
-                    this.inhabitans.Add(robot);
-                }
-                else if (args[0] == "Pet")
-                {
-                    string name = args[1];
-                    string birthdate = args[2];
-
-                    Pet pet = new Pet(name, birthdate);
-                    this.birthdates.Add(pet);
-                }
-            }
-
-            string lastDigits = Console.ReadLine();
-
-            foreach (var inhabitan in this.birthdates)
-            {
-                if (inhabitan.Birthdate.EndsWith(lastDigits))
-                {
-                    Console.WriteLine(inhabitan.Birthdate);
-                }
             }
         }
     }

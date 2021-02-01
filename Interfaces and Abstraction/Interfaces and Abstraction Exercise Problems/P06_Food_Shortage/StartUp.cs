@@ -4,7 +4,7 @@ using P06_Food_Shortage.Core;
 
 namespace P06_Food_Shortage
 {
-    class StartUp
+    public class StartUp
     {
         static void Main()
         {

@@ -2,6 +2,6 @@
 {
     public interface IInhabitants
     {
-        public string Id { get; }
+        public string Name { get; }
     }
 }
