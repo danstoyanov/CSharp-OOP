@@ -1,9 +1,8 @@
 ﻿using System;
 
-using P04_Border_Control.Contracts;
-using P05_Birthday_Celebrations.Contracts;
+using P06_Food_Shortage.Contracts;
 
-namespace P04_Border_Control.Models
+namespace P06_Food_Shortage.Models
 {
     public class Citizen : ICitizen, IInhabitants, IBirthdates
     {

@@ -1,7 +1,8 @@
-﻿using P04_Border_Control.Core;
-using System;
+﻿using System;
 
-namespace P04_Border_Control
+using P06_Food_Shortage.Core;
+
+namespace P06_Food_Shortage
 {
     class StartUp
     {

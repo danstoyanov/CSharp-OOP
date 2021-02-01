@@ -1,8 +1,8 @@
 ﻿using System;
 
-using P05_Birthday_Celebrations.Contracts;
+using P06_Food_Shortage.Contracts;
 
-namespace P05_Birthday_Celebrations.Models
+namespace P06_Food_Shortage.Models
 {
     public class Pet : IPet, IBirthdates
     {

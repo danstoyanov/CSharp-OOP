@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace P04_Border_Control.Contracts
+namespace P06_Food_Shortage.Contracts
 {
     public interface ICitizen
     {

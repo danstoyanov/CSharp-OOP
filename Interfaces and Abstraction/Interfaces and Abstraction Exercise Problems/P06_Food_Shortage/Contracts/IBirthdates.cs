@@ -1,4 +1,4 @@
-﻿namespace P05_Birthday_Celebrations.Contracts
+﻿namespace P06_Food_Shortage.Contracts
 {
     public interface IBirthdates
     {
