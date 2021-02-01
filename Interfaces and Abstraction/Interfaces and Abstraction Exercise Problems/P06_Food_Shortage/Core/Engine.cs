@@ -9,10 +9,11 @@ namespace P06_Food_Shortage.Core
 {
     public class Engine : IEngine
     {
-        private readonly List<IInhabitants> inhabitans;
+        private readonly List<IBuyer> buyers;
+
         public Engine()
         {
-            this.inhabitans = new List<IInhabitants>();
+            this.buyers = new List<IBuyer>();
         }
 
         public void Run()
@@ -33,7 +34,7 @@ namespace P06_Food_Shortage.Core
                     string birthdate = args[3];
 
                     Citizen citizen = new Citizen(name, age, id, birthdate);
-                    this.inhabitans.Add(citizen);
+                    this.buyers.Add(citizen);
                 }
                 else if (args.Length == 3)
                 {
@@ -42,7 +43,7 @@ namespace P06_Food_Shortage.Core
                     string group = args[2];
 
                     Rebel rebel = new Rebel(name, age, group);
-                    this.inhabitans.Add(rebel);
+                    this.buyers.Add(rebel);
                 }
             }
 
@@ -50,8 +51,23 @@ namespace P06_Food_Shortage.Core
 
             while ((command = Console.ReadLine()) != "End")
             {
+                string name = command;
 
+                if (this.buyers.Any(b => b.Name == name))
+                {
+                    var currentBayer = this.buyers.FirstOrDefault(b => b.Name == name);
+                    currentBayer.BuyFood();
+                }
             }
+
+            var foodValue = 0;
+
+            foreach (var person in this.buyers)
+            {
+                foodValue += person.Food;
+            }
+
+            Console.WriteLine(foodValue);
         }
     }
 }
