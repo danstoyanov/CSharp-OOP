@@ -5,5 +5,6 @@
         public string Name { get; }
         public string Age { get; }
         public string Id { get; }
+        public string Birthdate { get; }
     }
 }
