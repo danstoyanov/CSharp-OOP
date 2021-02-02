@@ -1,12 +1,15 @@
 ﻿using System;
 
+using P07_Military_Elite.Core;
+
 namespace P07_Military_Elite
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+            Engine engine = new Engine();
+            engine.Run();
         }
     }
 }
