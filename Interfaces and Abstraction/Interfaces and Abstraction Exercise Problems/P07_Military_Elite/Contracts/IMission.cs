@@ -5,7 +5,7 @@ namespace P07_Military_Elite.Contracts
     public interface IMission
     {
         string CodeName { get; }
-        State state { get; }
+        State State { get; }
         void CompleteMission();
     }
 }
