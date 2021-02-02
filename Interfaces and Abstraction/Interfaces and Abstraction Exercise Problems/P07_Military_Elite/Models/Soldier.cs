@@ -1,6 +1,6 @@
 ﻿using P07_Military_Elite.Contracts;
 
-namespace P07_Military_Elite.Models.Soldiers
+namespace P07_Military_Elite.Models
 {
     public abstract class Soldier : ISoldier
     {
@@ -14,5 +14,10 @@ namespace P07_Military_Elite.Models.Soldiers
         public int Id { get; private set; }
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
+
+        public override string ToString()
+        {
+            return $"Name: {this.FirstName} {this.LastName} Id: {this.Id}";
+        }
     }
 }
