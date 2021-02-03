@@ -13,6 +13,7 @@ namespace P07_Military_Elite
             IReader reader = new ConsoleReader();
             IWriter writer = new ConsoleWriter();
 
+
             Engine engine = new Engine();
             engine.Run();
         }
