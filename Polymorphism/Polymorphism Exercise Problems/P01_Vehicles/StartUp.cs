@@ -1,12 +1,14 @@
 ﻿using System;
 
+using P01_Vehicles.Core;
+
 namespace P01_Vehicles
 {
-    class StartUp
+    public class StartUp
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+            Engine engine = new Engine();
         }
     }
 }
