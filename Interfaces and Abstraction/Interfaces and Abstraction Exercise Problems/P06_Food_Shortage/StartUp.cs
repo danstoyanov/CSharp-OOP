@@ -9,7 +9,6 @@ namespace P06_Food_Shortage
         static void Main()
         {
             Engine engine = new Engine();
-
             engine.Run();
         }
     }
