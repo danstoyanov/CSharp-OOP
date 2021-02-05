@@ -1,12 +1,16 @@
 ﻿using System;
 
-namespace P02_Animals
+namespace Animals
 {
     public class StartUp
     {
         static void Main()
         {
+            Animal cat = new Cat("Pesho", "Whiskas");
+            Animal dog = new Dog("Gosho", "Meat");
 
+            Console.WriteLine(dog.ExplainSelf());
+            Console.WriteLine(cat.ExplainSelf());
         }
     }
 }
