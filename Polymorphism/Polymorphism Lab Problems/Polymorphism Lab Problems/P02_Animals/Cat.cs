@@ -1,4 +1,6 @@
-﻿namespace Animals
+﻿using System;
+
+namespace Animals
 {
     public class Cat : Animal
     {
@@ -10,7 +12,7 @@
 
         public override string ExplainSelf()
         {
-            return base.ExplainSelf() + " MEEOW";
+            return base.ExplainSelf() + Environment.NewLine + "MEEOW";
         }
     }
 }

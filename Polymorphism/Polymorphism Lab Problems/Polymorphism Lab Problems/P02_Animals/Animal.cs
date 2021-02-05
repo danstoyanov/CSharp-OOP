@@ -12,7 +12,7 @@
         public string FavouriteFood { get; set; }
         public virtual string ExplainSelf()
         {
-            return $"I am {this.Name} and my fovourite food is {this.FavouriteFood}";
+            return string.Format("I am {0} and my fovourite food is {1}", this.Name, this.FavouriteFood);
         }
     }
 }
