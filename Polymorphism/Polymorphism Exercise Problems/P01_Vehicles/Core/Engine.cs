@@ -25,9 +25,6 @@ namespace P01_Vehicles.Core
 
             int n = int.Parse(Console.ReadLine());
 
-
-
-
             for (int i = 0; i < n; i++)
             {
                 string[] commArgs = Console.ReadLine().Split(" ")
