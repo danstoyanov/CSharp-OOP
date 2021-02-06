@@ -10,8 +10,25 @@ namespace P01_Vehicles
             this.FuelConsumption = fuelConsumption;
         }
 
-        public double FuelQuantity { get; private set; }
+        public double FuelQuantity { get; set; }
 
         public double FuelConsumption { get; private set; }
+
+        public virtual string Drive(double distance)
+        {
+            this.FuelQuantity -= distance * (this.FuelConsumption);
+
+            return "{0} travelled {1} km";
+        }
+
+        public virtual void Refuel(double refuelQuantity)
+        {
+            this.FuelQuantity += refuelQuantity;
+        }
+
+        public override string ToString()
+        {
+            return $"{this.GetType().Name}: {this.FuelQuantity:F2}";
+        }
     }
 }
