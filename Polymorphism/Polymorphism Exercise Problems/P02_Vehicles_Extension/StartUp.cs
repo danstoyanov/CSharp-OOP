@@ -8,11 +8,8 @@ namespace P02_Vehicles_Extension
     {
         static void Main()
         {
-            //  Engine engine = new Engine();
-            //  engine.Run();
-
-            Vehicle machine = new Vehicle(51515, 0.04, 70);
-            Console.WriteLine(machine.Drive(42));
+            Engine engine = new Engine();
+            engine.Run();
         }
     }
 }

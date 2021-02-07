@@ -14,9 +14,9 @@ namespace P02_Vehicles_Extension.Models
 
         public override string Drive(double distance)
         {
-            if (this.FuelQuantity - (distance * (this.FuelConsumption + MORE_FUEL_CONSMP)) >= 0)
+            if (this.IntitialFuelQuantity - (distance * (this.LitersPerKm + MORE_FUEL_CONSMP)) >= 0)
             {
-                this.FuelQuantity -= distance * (this.FuelConsumption + MORE_FUEL_CONSMP);
+                this.IntitialFuelQuantity -= distance * (this.LitersPerKm + MORE_FUEL_CONSMP);
 
                 return $"{this.GetType().Name} travelled {distance} km";
             }

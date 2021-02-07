@@ -9,14 +9,14 @@ namespace P02_Vehicles_Extension
 
         public Vehicle(double fuelQuantity, double fuelConsumption, double tankCapacity)
         {
-            this.FuelQuantity = fuelQuantity;
-            this.FuelConsumption = fuelConsumption;
+            this.IntitialFuelQuantity = fuelQuantity;
+            this.LitersPerKm = fuelConsumption;
             this.TankCapacity = tankCapacity;
         }
 
-        public double FuelQuantity { get; set; }
+        public double IntitialFuelQuantity { get; set; }
 
-        public double FuelConsumption { get; private set; }
+        public double LitersPerKm { get; private set; }
 
         public double TankCapacity
         {
@@ -26,7 +26,7 @@ namespace P02_Vehicles_Extension
             }
             private set
             {
-                if (this.FuelQuantity <= value)
+                if (this.IntitialFuelQuantity <= value)
                 {
                     this.tankCapacity = value;
                 }
@@ -37,9 +37,9 @@ namespace P02_Vehicles_Extension
 
         public virtual string Drive(double distance)
         {
-            if (this.FuelQuantity - (distance * (this.FuelConsumption)) >= 0)
+            if (this.IntitialFuelQuantity - (distance * (this.LitersPerKm)) >= 0)
             {
-                this.FuelQuantity -= distance * (this.FuelConsumption);
+                this.IntitialFuelQuantity -= distance * (this.LitersPerKm);
 
                 return $"{this.GetType().Name} travelled {distance} km";
             }
@@ -51,19 +51,26 @@ namespace P02_Vehicles_Extension
 
         public virtual void Refuel(double refuelQuantity)
         {
-            if (this.FuelQuantity + refuelQuantity <= this.TankCapacity)
+            if (refuelQuantity > 0)
             {
-                this.FuelQuantity += refuelQuantity;
+                if (this.IntitialFuelQuantity + refuelQuantity <= this.TankCapacity)
+                {
+                    this.IntitialFuelQuantity += refuelQuantity;
+                }
+                else
+                {
+                    throw new Exception($"Cannot fit {refuelQuantity} fuel in the tank");
+                }
             }
             else
             {
-                throw new Exception($"Cannot fit {refuelQuantity} fuel in the tank");
+                throw new Exception("Fuel must be a positive number");
             }
         }
 
         public override string ToString()
         {
-            return $"{this.GetType().Name}: {this.FuelQuantity:F2}";
+            return $"{this.GetType().Name}: {this.IntitialFuelQuantity:F2}";
         }
     }
 }
