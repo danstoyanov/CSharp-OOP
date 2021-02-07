@@ -31,12 +31,20 @@ namespace P02_Vehicles_Extension.Models
 
         public override void Refuel(double refuelQuantity)
         {
-            refuelQuantity *= INCREASE_CAPACITY_VALUE;
-
-            if (this.IntitialFuelQuantity + refuelQuantity <= this.TankCapacity)
+            if (refuelQuantity > 0)
             {
-                this.IntitialFuelQuantity += refuelQuantity;
+                refuelQuantity *= INCREASE_CAPACITY_VALUE;
+
+                if (this.IntitialFuelQuantity + refuelQuantity <= this.TankCapacity)
+                {
+                    this.IntitialFuelQuantity += refuelQuantity;
+                }
             }
+            else
+            {
+                throw new Exception("Fuel must be a positive number");
+            }
+
         }
 
         public override string ToString()
