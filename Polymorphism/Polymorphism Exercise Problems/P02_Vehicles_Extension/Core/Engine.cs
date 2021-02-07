@@ -61,11 +61,14 @@ namespace P02_Vehicles_Extension.Core
                     {
                         Console.WriteLine(bus.Drive(inputValue));
                     }
+                    else if (command == "DriveEmpty Bus")
+                    {
+                        Console.WriteLine(bus.DriveEmpty(inputValue));
+                    }
                     else if (command == "Refuel Bus")
                     {
-                        Console.WriteLine(bus.Drive(inputValue));
+                        bus.Refuel(inputValue);
                     }
-
                 }
                 catch (Exception e)
                 {

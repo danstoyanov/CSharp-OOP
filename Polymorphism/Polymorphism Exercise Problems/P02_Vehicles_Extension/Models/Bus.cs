@@ -11,8 +11,21 @@ namespace P02_Vehicles_Extension.Models
         {
 
         }
-
         public override string Drive(double distance)
+        {
+            if (this.IntitialFuelQuantity - (distance * (this.LitersPerKm + MORE_FUEL_CONSMP)) >= 0)
+            {
+                this.IntitialFuelQuantity -= distance * (this.LitersPerKm + +MORE_FUEL_CONSMP);
+
+                return $"{this.GetType().Name} travelled {distance} km";
+            }
+            else
+            {
+                throw new Exception($"{this.GetType().Name} needs refueling");
+            }
+        }
+
+        public string DriveEmpty(double distance)
         {
             if (this.IntitialFuelQuantity - (distance * (this.LitersPerKm)) >= 0)
             {
@@ -26,19 +39,6 @@ namespace P02_Vehicles_Extension.Models
             }
         }
 
-        public string DriveEmpty(double distance)
-        {
-            if (this.IntitialFuelQuantity - (distance * (this.LitersPerKm + MORE_FUEL_CONSMP)) >= 0)
-            {
-                this.IntitialFuelQuantity -= distance * (this.LitersPerKm + +MORE_FUEL_CONSMP);
-
-                return $"{this.GetType().Name} travelled {distance} km";
-            }
-            else
-            {
-                throw new Exception($"{this.GetType().Name} needs refueling");
-            }
-        }
 
 
         public override void Refuel(double refuelQuantity)

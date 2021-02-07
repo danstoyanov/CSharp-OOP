@@ -5,35 +5,37 @@ namespace P02_Vehicles_Extension
 {
     public class Vehicle : IVehicle
     {
-        private double tankCapacity;
+        private double intitialFuelQuantity;
 
         public Vehicle(double fuelQuantity, double fuelConsumption, double tankCapacity)
         {
-            this.IntitialFuelQuantity = fuelQuantity;
-            this.LitersPerKm = fuelConsumption;
             this.TankCapacity = tankCapacity;
+            this.LitersPerKm = fuelConsumption;
+            this.IntitialFuelQuantity = fuelQuantity;
         }
 
-        public double IntitialFuelQuantity { get; set; }
-
-        public double LitersPerKm { get; private set; }
-
-        public double TankCapacity
+        public double IntitialFuelQuantity
         {
             get
             {
-                return this.tankCapacity;
+                return this.intitialFuelQuantity;
             }
-            private set
+            set
             {
-                if (this.IntitialFuelQuantity <= value)
+                if (this.intitialFuelQuantity <= this.TankCapacity)
                 {
-                    this.tankCapacity = value;
+                    this.intitialFuelQuantity = value;
                 }
-
-                this.tankCapacity = 0;
+                else
+                {
+                    this.intitialFuelQuantity = 0;
+                }
             }
         }
+
+        public double LitersPerKm { get; private set; }
+
+        public double TankCapacity { get; private set; }
 
         public virtual string Drive(double distance)
         {

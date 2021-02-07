@@ -7,7 +7,7 @@ namespace P02_Vehicles_Extension.Models
     public class Truck : Vehicle
     {
         private const double MORE_FUEL_CONSMP = 1.6;
-        private const double INCREASE_CAPACITY_VALUE = 0.95;
+        private const double INCREASE_CAPACITY_VALUE = 0.05;
 
         public Truck(double fuelQuantity, double fuelConsumption, double tankCapacity)
             : base(fuelQuantity, fuelConsumption, tankCapacity)
@@ -33,11 +33,14 @@ namespace P02_Vehicles_Extension.Models
         {
             if (refuelQuantity > 0)
             {
-                refuelQuantity *= INCREASE_CAPACITY_VALUE;
-
                 if (this.IntitialFuelQuantity + refuelQuantity <= this.TankCapacity)
                 {
                     this.IntitialFuelQuantity += refuelQuantity;
+                    this.IntitialFuelQuantity -= (refuelQuantity * INCREASE_CAPACITY_VALUE);
+                }
+                else
+                {
+                    throw new Exception($"Cannot fit {refuelQuantity} fuel in the tank");
                 }
             }
             else
