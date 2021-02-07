@@ -4,8 +4,8 @@ namespace P03_Raiding.Models
 {
     public class BaseHero : IBaseHero
     {
-        public string Name => throw new System.NotImplementedException();
+        public string Name { get; private set; }
 
-        public int Power => throw new System.NotImplementedException();
+        public int Power { get; private set; }
     }
 }
