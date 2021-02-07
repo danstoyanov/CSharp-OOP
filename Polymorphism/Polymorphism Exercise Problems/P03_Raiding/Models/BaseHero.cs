@@ -13,5 +13,10 @@ namespace P03_Raiding.Models
         public string Name { get; private set; }
 
         public int Power { get; private set; }
+
+        public virtual string CastAbility()
+        {
+            return $"{this.GetType().Name}";
+        }
     }
 }
