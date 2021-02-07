@@ -1,4 +1,6 @@
-﻿namespace P02_Vehicles_Extension.Models
+﻿using System;
+
+namespace P02_Vehicles_Extension.Models
 {
     public class Bus : Vehicle
     {
@@ -10,7 +12,16 @@
 
         public override string Drive(double distance)
         {
-            return base.Drive(distance);
+            if (this.FuelQuantity - (distance * (this.FuelConsumption)) >= 0)
+            {
+                this.FuelQuantity -= distance * (this.FuelConsumption);
+
+                return $"{this.GetType().Name} travelled {distance} km";
+            }
+            else
+            {
+                throw new Exception($"{this.GetType().Name} needs refueling");
+            }
         }
 
         public override void Refuel(double refuelQuantity)

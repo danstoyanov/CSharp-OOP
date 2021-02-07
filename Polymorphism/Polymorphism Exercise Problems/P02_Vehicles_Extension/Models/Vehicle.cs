@@ -1,4 +1,5 @@
 ﻿using P02_Vehicles_Extension.Contracts;
+using System;
 
 namespace P02_Vehicles_Extension
 {
@@ -19,8 +20,16 @@ namespace P02_Vehicles_Extension
 
         public virtual string Drive(double distance)
         {
-            this.FuelQuantity -= distance * (this.FuelConsumption);
-            return "{0} travelled {1} km";
+            if (this.FuelQuantity - (distance * (this.FuelConsumption)) >= 0)
+            {
+                this.FuelQuantity -= distance * (this.FuelConsumption);
+
+                return $"{this.GetType().Name} travelled {distance} km";
+            }
+            else
+            {
+                throw new Exception($"{this.GetType().Name} needs refueling");
+            }
         }
 
         public virtual void Refuel(double refuelQuantity)
