@@ -9,8 +9,8 @@ namespace P02_Vehicles_Extension.Models
         private const double MORE_FUEL_CONSMP = 1.6;
         private const double INCREASE_CAPACITY_VALUE = 0.95;
 
-        public Truck(double fuelQuantity, double fuelConsumption)
-            : base(fuelQuantity, fuelConsumption)
+        public Truck(double fuelQuantity, double fuelConsumption, double tankCapacity)
+            : base(fuelQuantity, fuelConsumption, tankCapacity)
         {
 
         }

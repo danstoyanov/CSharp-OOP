@@ -4,20 +4,22 @@ namespace P02_Vehicles_Extension
 {
     public class Vehicle : IVehicle
     {
-        public Vehicle(double fuelQuantity, double fuelConsumption)
+        public Vehicle(double fuelQuantity, double fuelConsumption, double tankCapacity)
         {
             this.FuelQuantity = fuelQuantity;
             this.FuelConsumption = fuelConsumption;
+            this.TankCapacity = tankCapacity;
         }
 
         public double FuelQuantity { get; set; }
 
         public double FuelConsumption { get; private set; }
 
+        public double TankCapacity { get; private set; }
+
         public virtual string Drive(double distance)
         {
             this.FuelQuantity -= distance * (this.FuelConsumption);
-
             return "{0} travelled {1} km";
         }
 

@@ -6,8 +6,8 @@ namespace P02_Vehicles_Extension.Models
     {
         private const double MORE_FUEL_CONSMP = 0.9;
 
-        public Car(double fuelQuantity, double fuelConsumption)
-            : base(fuelQuantity, fuelConsumption)
+        public Car(double fuelQuantity, double fuelConsumption, double tankCapacity)
+            : base(fuelQuantity, fuelConsumption, tankCapacity)
         {
 
         }

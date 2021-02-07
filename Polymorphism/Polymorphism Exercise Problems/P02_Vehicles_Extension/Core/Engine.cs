@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-using P01_Vehicles.Models;
+using P02_Vehicles_Extension.Models;
 
 namespace P02_Vehicles_Extension.Core
 {
@@ -21,8 +21,8 @@ namespace P02_Vehicles_Extension.Core
                 .Split()
                 .ToArray();
 
-            Car car = new Car(double.Parse(carArgs[1]), double.Parse(carArgs[2]));
-            Truck truck = new Truck(double.Parse(truckArgs[1]), double.Parse(truckArgs[2]));
+            Car car = new Car(double.Parse(carArgs[1]), double.Parse(carArgs[2]), double.Parse(carArgs[3]));
+            Truck truck = new Truck(double.Parse(truckArgs[1]), double.Parse(truckArgs[2]), double.Parse(truckArgs[3]));
 
             int n = int.Parse(Console.ReadLine());
 
