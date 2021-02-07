@@ -1,10 +1,10 @@
 ﻿namespace P03_Raiding.Models
 {
-    public class Druid : BaseHero
+    public class Paladin : BaseHero
     {
-        private const int HERO_POWER_POINTS = 80;
+        private const int HERO_POWER_POINTS = 100;
 
-        public Druid(string name, int power) 
+        public Paladin(string name, int power) 
             : base(name, HERO_POWER_POINTS)
         {
             this.Power = HERO_POWER_POINTS;
