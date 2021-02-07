@@ -25,14 +25,18 @@ namespace P02_Vehicles_Extension.Models
             }
             else
             {
-                throw new Exception ($"{this.GetType().Name} needs refueling");
+                throw new Exception($"{this.GetType().Name} needs refueling");
             }
         }
 
         public override void Refuel(double refuelQuantity)
         {
             refuelQuantity *= INCREASE_CAPACITY_VALUE;
-            this.FuelQuantity += refuelQuantity;
+
+            if (this.FuelQuantity + refuelQuantity <= this.TankCapacity)
+            {
+                this.FuelQuantity += refuelQuantity;
+            }
         }
 
         public override string ToString()

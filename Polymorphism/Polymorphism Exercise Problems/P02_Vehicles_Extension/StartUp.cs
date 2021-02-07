@@ -1,7 +1,6 @@
 ﻿using System;
 
 using P02_Vehicles_Extension.Core;
-using P02_Vehicles_Extension.Models;
 
 namespace P02_Vehicles_Extension
 {
@@ -9,12 +8,11 @@ namespace P02_Vehicles_Extension
     {
         static void Main()
         {
-            //    Engine engine = new Engine();
-            //    engine.Run();
+            //  Engine engine = new Engine();
+            //  engine.Run();
 
-            var bus = new Bus(40, 0.3, 150);
-
-            Console.WriteLine(bus.Drive(10));
+            Vehicle machine = new Vehicle(51515, 0.04, 70);
+            Console.WriteLine(machine.Drive(42));
         }
     }
 }

@@ -5,6 +5,8 @@ namespace P02_Vehicles_Extension
 {
     public class Vehicle : IVehicle
     {
+        private double tankCapacity;
+
         public Vehicle(double fuelQuantity, double fuelConsumption, double tankCapacity)
         {
             this.FuelQuantity = fuelQuantity;
@@ -16,7 +18,22 @@ namespace P02_Vehicles_Extension
 
         public double FuelConsumption { get; private set; }
 
-        public double TankCapacity { get; private set; }
+        public double TankCapacity
+        {
+            get
+            {
+                return this.tankCapacity;
+            }
+            private set
+            {
+                if (this.FuelQuantity <= value)
+                {
+                    this.tankCapacity = value;
+                }
+
+                this.tankCapacity = 0;
+            }
+        }
 
         public virtual string Drive(double distance)
         {
@@ -34,7 +51,14 @@ namespace P02_Vehicles_Extension
 
         public virtual void Refuel(double refuelQuantity)
         {
-            this.FuelQuantity += refuelQuantity;
+            if (this.FuelQuantity + refuelQuantity <= this.TankCapacity)
+            {
+                this.FuelQuantity += refuelQuantity;
+            }
+            else
+            {
+                throw new Exception($"Cannot fit {refuelQuantity} fuel in the tank");
+            }
         }
 
         public override string ToString()

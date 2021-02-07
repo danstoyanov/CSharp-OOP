@@ -31,7 +31,7 @@ namespace P02_Vehicles_Extension.Models
 
         public override string ToString()
         {
-            return $"{this.GetType().Name}: {this.FuelQuantity:F2}";
+            return base.ToString();
         }
     }
 }

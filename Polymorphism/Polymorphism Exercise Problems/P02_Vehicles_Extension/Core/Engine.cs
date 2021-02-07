@@ -21,8 +21,13 @@ namespace P02_Vehicles_Extension.Core
                 .Split()
                 .ToArray();
 
+            string[] busArgs = Console.ReadLine()
+                .Split()
+                .ToArray();
+
             Car car = new Car(double.Parse(carArgs[1]), double.Parse(carArgs[2]), double.Parse(carArgs[3]));
             Truck truck = new Truck(double.Parse(truckArgs[1]), double.Parse(truckArgs[2]), double.Parse(truckArgs[3]));
+            Bus bus = new Bus(double.Parse(busArgs[1]), double.Parse(busArgs[2]), double.Parse(busArgs[3]));
 
             int n = int.Parse(Console.ReadLine());
 
@@ -52,6 +57,15 @@ namespace P02_Vehicles_Extension.Core
                     {
                         truck.Refuel(inputValue);
                     }
+                    else if (command == "Drive Bus")
+                    {
+                        Console.WriteLine(bus.Drive(inputValue));
+                    }
+                    else if (command == "Refuel Bus")
+                    {
+                        Console.WriteLine(bus.Drive(inputValue));
+                    }
+
                 }
                 catch (Exception e)
                 {
@@ -62,6 +76,7 @@ namespace P02_Vehicles_Extension.Core
 
             Console.WriteLine(car.ToString());
             Console.WriteLine(truck.ToString());
+            Console.WriteLine(bus.ToString());
         }
     }
 }
