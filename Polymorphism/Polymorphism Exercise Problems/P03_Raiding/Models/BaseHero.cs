@@ -16,7 +16,7 @@ namespace P03_Raiding.Models
 
         public virtual string CastAbility()
         {
-            return $"{this.GetType().Name} – ";
+            return $"{this.GetType().Name} - ";
         }
     }
 }

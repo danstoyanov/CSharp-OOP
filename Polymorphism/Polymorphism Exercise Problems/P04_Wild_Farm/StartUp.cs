@@ -2,7 +2,7 @@
 
 namespace P04_Wild_Farm
 {
-    class StartUp
+    public class StartUp
     {
         static void Main()
         {
