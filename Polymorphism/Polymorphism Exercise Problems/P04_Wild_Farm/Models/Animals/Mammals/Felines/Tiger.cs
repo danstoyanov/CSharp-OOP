@@ -2,10 +2,15 @@
 {
     public class Tiger : Feline
     {
-        public Tiger(string name, double weight, int foodEaten, string livigRegion) 
-            : base(name, weight, foodEaten, livigRegion)
+        public Tiger(string name, double weight, string livigRegion, string breed) 
+            : base(name, weight, livigRegion, breed)
         {
 
+        }
+
+        public override string ProducingSound()
+        {
+            return "ROAR!!!";
         }
     }
 }

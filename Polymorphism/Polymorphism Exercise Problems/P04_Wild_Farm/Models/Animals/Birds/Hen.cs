@@ -2,8 +2,8 @@
 {
     public class Hen : Bird
     {
-        public Hen(string name, double weight, int foodEaten, double windSize) 
-            : base(name, weight, foodEaten, windSize)
+        public Hen(string name, double weight, double windSize) 
+            : base(name, weight, windSize)
         {
 
         }

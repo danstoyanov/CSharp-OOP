@@ -2,11 +2,15 @@
 {
     public class Owl : Bird
     {
-        public Owl(string name, double weight, int foodEaten, double windSize) 
-            : base(name, weight, foodEaten, windSize)
+        public Owl(string name, double weight, double windSize) 
+            : base(name, weight, windSize)
         {
 
         }
 
+        public override string ProducingSound()
+        {
+            return "Hoot Hoot";
+        }
     }
 }

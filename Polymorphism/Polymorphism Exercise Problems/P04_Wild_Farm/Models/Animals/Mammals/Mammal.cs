@@ -4,12 +4,17 @@ namespace P04_Wild_Farm.Models.Animals.Mammals
 {
     public class Mammal : Animal, IMammal
     {
-        public Mammal(string name, double weight, int foodEaten, string livigRegion) 
-            : base(name, weight, foodEaten)
+        public Mammal(string name, double weight, string livigRegion) 
+            : base(name, weight)
         {
             this.LivingRegion = livigRegion;
         }
 
         public string LivingRegion { get; set; }
+
+        public override string ProducingSound()
+        {
+            return base.ProducingSound();
+        }
     }
 }

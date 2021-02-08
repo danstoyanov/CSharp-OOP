@@ -2,10 +2,15 @@
 {
     public class Mouse : Mammal
     {
-        public Mouse(string name, double weight, int foodEaten, string livigRegion) 
-            : base(name, weight, foodEaten, livigRegion)
+        public Mouse(string name, double weight, string livigRegion) 
+            : base(name, weight, livigRegion)
         {
 
+        }
+
+        public override string ProducingSound()
+        {
+            return "Squeak";
         }
     }
 }
