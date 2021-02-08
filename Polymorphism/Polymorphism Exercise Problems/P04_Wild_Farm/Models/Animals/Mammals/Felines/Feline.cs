@@ -16,5 +16,10 @@ namespace P04_Wild_Farm.Models.Animals.Mammals.Felines
         {
             return base.ProducingSound();
         }
+
+        public override string ToString()
+        {
+            return $"{this.GetType().Name} [{this.Name}, {this.Breed}, {this.Weight}, {this.LivingRegion}, {this.FoodEaten}]";
+        }
     }
 }

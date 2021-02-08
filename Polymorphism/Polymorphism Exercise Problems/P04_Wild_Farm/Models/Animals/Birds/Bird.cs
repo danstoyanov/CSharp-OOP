@@ -16,5 +16,10 @@ namespace P04_Wild_Farm.Models.Animals.Birds
         {
             return base.ProducingSound();
         }
+
+        public override string ToString()
+        {
+            return $"{this.GetType().Name} [{this.Name}, {this.WingSize}, {this.Weight}, {this.FoodEaten}]";
+        }
     }
 }

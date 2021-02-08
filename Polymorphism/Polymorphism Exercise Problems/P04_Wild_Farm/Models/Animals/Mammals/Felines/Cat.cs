@@ -4,7 +4,9 @@ namespace P04_Wild_Farm.Models.Animals.Mammals.Felines
 {
     public class Cat : Feline
     {
-        public Cat(string name, double weight, string livigRegion, string breed) 
+        private const double FOOD_PIECE_QUANTITY = 0.30;
+
+        public Cat(string name, double weight, string livigRegion, string breed)
             : base(name, weight, livigRegion, breed)
         {
 
@@ -15,17 +17,20 @@ namespace P04_Wild_Farm.Models.Animals.Mammals.Felines
             return "Meow";
         }
 
-        public void Eat (Food food)
+        public void Eat(Food food)
         {
-            if (food.GetType().Name != "Meso")
+            if (food.GetType().Name != "Meat" && food.GetType().Name != "Vegetable")
             {
-                // exeption
+                throw new System.Exception($"{this.GetType().Name} does not eat {food.GetType().Name}!");
             }
 
-            // foodEaten += food.Quantity;
-            // this.Weight += (CONST_VALUE * food.Quantity);
+            this.FoodEaten += food.Quantity;
+            this.Weight += (FOOD_PIECE_QUANTITY * food.Quantity);
+        }
 
-            // cat eats ! 
+        public override string ToString()
+        {
+            return $"{this.GetType().Name} [{this.Name}, {this.Breed}, {this.Weight}, {this.LivingRegion}, {this.FoodEaten}]";
         }
     }
 }
