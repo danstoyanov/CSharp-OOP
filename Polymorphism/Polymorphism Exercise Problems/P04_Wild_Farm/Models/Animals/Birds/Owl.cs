@@ -17,7 +17,7 @@ namespace P04_Wild_Farm.Models.Animals.Birds
             return "Hoot Hoot";
         }
 
-        public void Eat(Food food)
+        public override void Eat(Food food)
         {
             if (food.GetType().Name != "Meat")
             {

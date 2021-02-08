@@ -13,12 +13,10 @@ namespace P04_Wild_Farm.Core
     public class Engine
     {
         private readonly List<Animal> animals;
-        private readonly List<Food> foods;
 
         public Engine()
         {
             animals = new List<Animal>();
-            foods = new List<Food>();
         }
 
         public void Run()
@@ -27,143 +25,109 @@ namespace P04_Wild_Farm.Core
 
             while ((command = Console.ReadLine()) != "End")
             {
-                string[] animalArgs = command
-                .Split(" ")
-                .ToArray();
-
-                string animalType = animalArgs[0];
-                string name = animalArgs[1];
-                double weight = double.Parse(animalArgs[2]);
-
-                // Animal Input !
-                if (animalType == "Cat" || animalType == "Tiger")
+                try
                 {
-                    string region = animalArgs[3];
-                    string breed = animalArgs[4];
+                    var animal = new Animal();
+                    var food = new Food();
 
-                    if (animalType == "Cat")
-                    {
-                        Cat cat = new Cat(name, weight, region, breed);
-                        this.animals.Add(cat);
-                    }
-                    else if (animalType == "Tiger")
-                    {
-                        Tiger tiger = new Tiger(name, weight, region, breed);
-                        this.animals.Add(tiger);
-                    }
-                }
-                else if (animalType == "Owl" || animalType == "Hen")
-                {
-                    double windSize = double.Parse(animalArgs[3]);
-
-                    if (animalType == "Own")
-                    {
-                        Owl owl = new Owl(name, weight, windSize);
-                        this.animals.Add(owl);
-                    }
-                    else if (animalType == "Hen")
-                    {
-                        Hen hen = new Hen(name, weight, windSize);
-                        this.animals.Add(hen);
-                    }
-                }
-                else if (animalType == "Dog" || animalType == "Mouse")
-                {
-                    string region = animalArgs[3];
-
-                    if (animalType == "Dog")
-                    {
-                        Dog dog = new Dog(name, weight, region);
-                        this.animals.Add(dog);
-                    }
-                    else if (animalType == "Mouse")
-                    {
-                        Mouse mouse = new Mouse(name, weight, region);
-                        this.animals.Add(mouse);
-                    }
-                }
-
-                string[] foodArgs = Console.ReadLine()
-                    .Split()
+                    string[] animalArgs = command
+                    .Split(" ")
                     .ToArray();
 
-                string foodType = foodArgs[0];
-                int quantity = int.Parse(foodArgs[1]);
+                    string animalType = animalArgs[0];
+                    string name = animalArgs[1];
+                    double weight = double.Parse(animalArgs[2]);
 
-                if (foodType == "Vegetable")
-                {
-                    Vegetable vegetable = new Vegetable(quantity);
-                    this.foods.Add(vegetable);
+                    // Animal Input !
+                    if (animalType == "Cat" || animalType == "Tiger")
+                    {
+                        string region = animalArgs[3];
+                        string breed = animalArgs[4];
+
+                        if (animalType == "Cat")
+                        {
+                            Cat cat = new Cat(name, weight, region, breed);
+                            animal = cat;
+                        }
+                        else if (animalType == "Tiger")
+                        {
+                            Tiger tiger = new Tiger(name, weight, region, breed);
+                            animal = tiger;
+                        }
+                    }
+                    else if (animalType == "Owl" || animalType == "Hen")
+                    {
+                        double windSize = double.Parse(animalArgs[3]);
+
+                        if (animalType == "Owl")
+                        {
+                            Owl owl = new Owl(name, weight, windSize);
+                            animal = owl;
+                        }
+                        else if (animalType == "Hen")
+                        {
+                            Hen hen = new Hen(name, weight, windSize);
+                            animal = hen;
+                        }
+                    }
+                    else if (animalType == "Dog" || animalType == "Mouse")
+                    {
+                        string region = animalArgs[3];
+
+                        if (animalType == "Dog")
+                        {
+                            Dog dog = new Dog(name, weight, region);
+                            animal = dog;
+                        }
+                        else if (animalType == "Mouse")
+                        {
+                            Mouse mouse = new Mouse(name, weight, region);
+                            animal = mouse;
+                        }
+                    }
+
+                    string[] foodArgs = Console.ReadLine()
+                        .Split()
+                        .ToArray();
+
+                    string foodType = foodArgs[0];
+                    int quantity = int.Parse(foodArgs[1]);
+
+                    if (foodType == "Vegetable")
+                    {
+                        Vegetable vegetable = new Vegetable(quantity);
+                        food = vegetable;
+                    }
+                    else if (foodType == "Fruit")
+                    {
+                        Fruit fruit = new Fruit(quantity);
+                        food = fruit;
+                    }
+                    else if (foodType == "Meat")
+                    {
+                        Meat meat = new Meat(quantity);
+                        food = meat;
+                    }
+                    else if (foodType == "Seeds")
+                    {
+                        Seeds seeds = new Seeds(quantity);
+                        food = seeds;
+                    }
+
+                    animals.Add(animal);
+                    Console.WriteLine(animal.ProducingSound());
+                    animal.Eat(food);
                 }
-                else if (foodType == "Fruit")
+                catch (Exception ex)
                 {
-                    Fruit fruit = new Fruit(quantity);
-                    this.foods.Add(fruit);
-                }
-                else if (foodType == "Meat")
-                {
-                    Meat meat = new Meat(quantity);
-                    this.foods.Add(meat);
-                }
-                else if (foodType == "Seeds")
-                {
-                    Seeds seeds = new Seeds(quantity);
-                    this.foods.Add(seeds);
+                    Console.WriteLine(ex.Message);
+                    continue;
                 }
             }
-        }
 
-        private static void AddAnimals(string command)
-        {
-            string[] animalArgs = command
-                .Split(" ")
-                .ToArray();
-
-            string animalType = animalArgs[0];
-            string name = animalArgs[1];
-            double weight = double.Parse(animalArgs[2]);
-
-            // Animal Input !
-            if (animalType == "Cat" || animalType == "Tiger")
+            foreach (var animal in this.animals)
             {
-                string region = animalArgs[3];
-                string breed = animalArgs[4];
-
-                if (animalType == "Cat")
-                {
-                    Cat cat = new Cat(name, weight, region, breed);
-                    dict.Add();
-                }
-                else if (animalType == "Tiger")
-                {
-                    Tiger tiger = new Tiger(name, weight, region, breed);
-                }
-            }
-            else if (animalType == "Owl" || animalType == "Hen")
-            {
-                double windSize = double.Parse(animalArgs[3]);
-
-                if (animalType == "Own")
-                {
-                    Owl own = new Owl(name, weight, windSize);
-                }
-                else if (animalType == "Hen")
-                {
-                    Hen hen = new Hen(name, weight, windSize);
-                }
-            }
-            else if (animalType == "Dog" || animalType == "Mouse")
-            {
-                string region = animalArgs[3];
-
-                if (animalType == "Dog")
-                {
-                    Dog dog = new Dog(name, weight, region);
-                }
-                else if (animalType == "Mouse")
-                {
-                    Mouse mouse = new Mouse(name, weight, region);
-                }
+                Console.WriteLine(animal.ToString());
             }
         }
     }

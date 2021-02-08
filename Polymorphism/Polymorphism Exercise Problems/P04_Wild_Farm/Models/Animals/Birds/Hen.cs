@@ -17,7 +17,7 @@ namespace P04_Wild_Farm.Models.Animals.Birds
             return "Cluck";
         }
 
-        public void Eat(Food food)
+        public override void Eat(Food food)
         {
             this.FoodEaten += food.Quantity;
             this.Weight += (FOOD_PIECE_QUANTITY * food.Quantity);

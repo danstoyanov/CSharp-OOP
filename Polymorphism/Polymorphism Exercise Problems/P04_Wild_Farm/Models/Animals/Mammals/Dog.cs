@@ -17,7 +17,7 @@ namespace P04_Wild_Farm.Models.Animals.Mammals
             return "Woof!";
         }
 
-        public void Eat(Food food)
+        public override void Eat(Food food)
         {
             if (food.GetType().Name != "Meat")
             {
@@ -30,7 +30,7 @@ namespace P04_Wild_Farm.Models.Animals.Mammals
 
         public override string ToString()
         {
-            return $"{this.GetType()} [{this.Name}, {this.Weight}, {this.LivingRegion}, {this.FoodEaten}]";
+            return $"{this.GetType().Name} [{this.Name}, {this.Weight}, {this.LivingRegion}, {this.FoodEaten}]";
         }
     }
 }
