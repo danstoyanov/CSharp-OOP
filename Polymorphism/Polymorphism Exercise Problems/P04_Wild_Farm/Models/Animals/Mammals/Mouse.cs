@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace P04_Wild_Farm.Models.Animals.Mammals
+﻿namespace P04_Wild_Farm.Models.Animals.Mammals
 {
-    class Mouse
+    public class Mouse : Mammal
     {
+        public Mouse(string name, double weight, int foodEaten, string livigRegion) 
+            : base(name, weight, foodEaten, livigRegion)
+        {
+
+        }
     }
 }

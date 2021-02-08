@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace P04_Wild_Farm.Models.Animals.Birds
+﻿namespace P04_Wild_Farm.Models.Animals.Birds
 {
-    class Owl
+    public class Owl : Bird
     {
+        public Owl(string name, double weight, int foodEaten, double windSize) 
+            : base(name, weight, foodEaten, windSize)
+        {
+
+        }
+
     }
 }
