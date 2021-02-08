@@ -12,7 +12,7 @@
 
         public override string CastAbility()
         {
-            return base.CastAbility() + $"{this.Name} healed for {this.Power}";
+            return base.CastAbility() + $"{this.Name} healed for {this.Power}".ToString();
         }
     }
 }

@@ -1,5 +1,7 @@
-﻿using P03_Raiding.Models;
-using System;
+﻿using System;
+
+using P03_Raiding.Core;
+using P03_Raiding.Models;
 
 namespace P03_Raiding
 {
@@ -7,16 +9,8 @@ namespace P03_Raiding
     {
         static void Main()
         {
-            var druid = new Druid("Pesho", 32);
-            var paladin = new Druid("Milo", 32);
-            var rogue = new Druid("Chilo", 32);
-            var warrior = new Druid("Shilo", 32);
-
-            Console.WriteLine(druid.ToString());
-            Console.WriteLine(paladin.ToString());
-            Console.WriteLine(rogue.ToString());
-            Console.WriteLine(warrior.ToString());
-
+            Engine engine = new Engine();
+            engine.Run();
         }
     }
 }
