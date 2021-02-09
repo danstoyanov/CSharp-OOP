@@ -3,7 +3,7 @@ using P01_Vehicles.Contracts;
 
 namespace P01_Vehicles
 {
-    public class Vehicle : IVehicle
+    public abstract class Vehicle : IVehicle
     {
         public Vehicle(double fuelQuantity, double fuelConsumption)
         {
