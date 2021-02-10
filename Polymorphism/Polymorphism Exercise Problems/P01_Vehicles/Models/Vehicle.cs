@@ -13,7 +13,7 @@ namespace P01_Vehicles
 
         public double FuelQuantity { get; set; }
 
-        public double FuelConsumption { get; private set; }
+        public virtual double FuelConsumption { get; private set; }
 
         public virtual string Drive(double distance)
         {
