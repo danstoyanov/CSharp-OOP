@@ -1,10 +1,10 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 
 using EasterRaces.Utilities.Messages;
 using EasterRaces.Models.Races.Contracts;
 using EasterRaces.Models.Drivers.Contracts;
-using System.Linq;
 
 namespace EasterRaces.Models.Races.Entities
 {
