@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Drivers\Entities\" />
     <Folder Include="Models\Races\Entities\" />
     <Folder Include="Repositories\Entities\" />
   </ItemGroup>

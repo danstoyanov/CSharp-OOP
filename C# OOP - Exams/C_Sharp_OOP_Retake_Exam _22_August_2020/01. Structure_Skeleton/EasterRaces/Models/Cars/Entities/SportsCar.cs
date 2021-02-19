@@ -11,7 +11,7 @@ namespace EasterRaces.Models.Cars.Entities
 
         private int horsePower;
 
-        public SportsCar(string model, int horsePower, double cubicCentimeters) 
+        public SportsCar(string model, int horsePower) 
             : base(model, horsePower, CURR_CAR_CUBIC_CENTIMETERS)
         {
             this.HorsePower = horsePower;
