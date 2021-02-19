@@ -39,7 +39,7 @@ namespace EasterRaces.Models.Cars.Entities
 
         public abstract int HorsePower { get; protected set; }
 
-        public abstract double CubicCentimeters { get; protected set; }
+        public double CubicCentimeters { get; }
 
         public double CalculateRacePoints(int laps) => this.CubicCentimeters / this.HorsePower * laps;
     }
