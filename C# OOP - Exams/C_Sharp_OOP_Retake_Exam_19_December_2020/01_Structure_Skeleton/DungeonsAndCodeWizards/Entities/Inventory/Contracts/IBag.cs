@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+
 using WarCroft.Entities.Items;
 
 namespace WarCroft.Entities.Inventory
