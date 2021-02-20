@@ -76,6 +76,8 @@ namespace EasterRaces.Models.Races.Entities
             {
                 throw new ArgumentNullException(nameof(IDriver), String.Format(ExceptionMessages.DriverAlreadyAdded, driver.Name, this.Name));
             }
+
+            this.drivers.Add(driver);
         }
     }
 }

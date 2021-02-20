@@ -1,4 +1,5 @@
 ﻿using System;
+
 using WarCroft.Core;
 using WarCroft.Core.IO;
 using WarCroft.Core.IO.Contracts;
