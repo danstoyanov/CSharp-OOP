@@ -1,11 +1,10 @@
 ﻿using System;
 
-using WarCroft.Entities.Characters.Contracts;
 using WarCroft.Constants;
+using WarCroft.Entities.Characters.Contracts;
 
 namespace WarCroft.Entities.Items
 {
-	// Christmas came early this year - this class is already implemented for you!
 	public abstract class Item
 	{
 		protected Item(int weight)
