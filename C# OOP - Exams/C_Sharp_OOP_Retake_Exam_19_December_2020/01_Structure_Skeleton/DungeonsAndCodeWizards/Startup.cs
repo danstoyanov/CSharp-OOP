@@ -8,7 +8,7 @@ namespace WarCroft
 {
 	public class StartUp
 	{
-		public static void Main(string[] args)
+		public static void Main()
 		{
             IReader reader = new ConsoleReader();
             IWriter writer = new ConsoleWriter();
