@@ -2,11 +2,11 @@
 
 namespace P06_Code_Tracker
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+
         }
     }
 }
