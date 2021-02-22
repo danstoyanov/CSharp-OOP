@@ -2,7 +2,7 @@
 
 namespace P05_Create_Attribute
 {
-    class Program
+    class StartUp
     {
         static void Main(string[] args)
         {

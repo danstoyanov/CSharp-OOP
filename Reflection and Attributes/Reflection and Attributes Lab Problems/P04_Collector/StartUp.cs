@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace P03_Mission_Private_Impossible
+namespace P04_Collector
 {
-    class Program
+    class StartUp
     {
         static void Main(string[] args)
         {
