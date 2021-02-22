@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace _02_Validation_Attributes
+namespace P02_Validation_Attributes
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+
         }
     }
 }
