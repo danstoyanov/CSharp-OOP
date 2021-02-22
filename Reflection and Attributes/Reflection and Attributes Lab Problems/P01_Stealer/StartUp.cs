@@ -10,7 +10,6 @@ namespace Stealer
             string result = spy.StealFieldInfo("Stealer.Hacker", "username", "password");
 
             Console.WriteLine(result.ToString());
-
         }
     }
 }

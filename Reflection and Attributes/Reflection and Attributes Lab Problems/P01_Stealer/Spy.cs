@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Text;
 using System.Linq;
+using System.Text;
 using System.Reflection;
 
 namespace Stealer
@@ -13,7 +13,11 @@ namespace Stealer
 
             Type currentType = Type.GetType(investigatedClass);
 
-            FieldInfo[] classFields = currentType.GetFields(BindingFlags.Instance | BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public);
+            FieldInfo[] classFields = currentType.GetFields(
+                BindingFlags.Instance | 
+                BindingFlags.Static | 
+                BindingFlags.NonPublic | 
+                BindingFlags.Public);
 
             Object classInstance = Activator.CreateInstance(currentType, new object[] { });
 
