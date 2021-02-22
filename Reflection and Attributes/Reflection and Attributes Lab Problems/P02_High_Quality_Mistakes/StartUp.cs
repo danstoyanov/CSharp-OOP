@@ -2,7 +2,7 @@
 
 namespace P02_High_Quality_Mistakes
 {
-    class Program
+    class StartUp
     {
         static void Main(string[] args)
         {
