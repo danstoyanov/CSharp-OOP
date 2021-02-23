@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace P04_Collector
+namespace Stealer
 {
-    class StartUp
+    public class StartUp
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+
         }
     }
 }
