@@ -1,12 +1,13 @@
 ﻿using System;
 
-namespace P05_Code_Tracker
+namespace AuthorProblem
 {
+    [Author("Ventsi")]
     public class StartUp
     {
-        static void Main()
+        [Author("Gosho")]
+        static void Main(string[] args)
         {
-
         }
     }
 }
