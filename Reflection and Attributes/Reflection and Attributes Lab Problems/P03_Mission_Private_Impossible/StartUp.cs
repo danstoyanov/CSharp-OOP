@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace P03_Mission_Private_Impossible
+namespace Stealer
 {
     public class StartUp
     {

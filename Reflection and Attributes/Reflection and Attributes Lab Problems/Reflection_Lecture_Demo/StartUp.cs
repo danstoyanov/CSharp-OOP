@@ -37,9 +37,6 @@ namespace Reflection_Lecture_Demo
             who.Invoke(newInstance, null);
 
             field.SetValue(test, "");
-
-
-
         }
     }
 }

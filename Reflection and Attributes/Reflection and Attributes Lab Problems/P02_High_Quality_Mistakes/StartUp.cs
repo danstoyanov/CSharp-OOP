@@ -6,7 +6,11 @@ namespace Stealer
     {
         static void Main()
         {
+            Spy spy = new Spy();
 
+            string result = spy.AnalyzeAcessModifiers("Stealer.Hacker");
+
+            Console.WriteLine(result);
         }
     }
 }

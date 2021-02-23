@@ -3,5 +3,7 @@
     public interface ISpy
     {
         string StealFieldInfo(string investigate, params string[] arr);
+
+        string AnalyzeAcessModifiers(string className);
     }
 }
