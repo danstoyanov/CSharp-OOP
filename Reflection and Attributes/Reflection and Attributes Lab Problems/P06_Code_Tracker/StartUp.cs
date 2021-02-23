@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace P06_Code_Tracker
+namespace P06_5.Create_Attribute 
 {
     public class StartUp
     {
