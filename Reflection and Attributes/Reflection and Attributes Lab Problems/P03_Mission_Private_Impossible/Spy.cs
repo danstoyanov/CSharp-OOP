@@ -53,7 +53,12 @@ namespace Stealer
 
         public string RevealPrivateMethods(string className)
         {
+            // all private methods in className !!!!!
             StringBuilder sb = new StringBuilder();
+
+
+
+
 
 
             return sb.ToString().Trim();

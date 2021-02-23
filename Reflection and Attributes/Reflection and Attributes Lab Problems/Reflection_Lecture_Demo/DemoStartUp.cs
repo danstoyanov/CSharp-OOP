@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace Reflection_Lecture_Demo
 {
-    public class StartUp
+    public class DemoStartUp
     {
         static void Main()
         {
