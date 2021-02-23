@@ -51,6 +51,14 @@ namespace Stealer
             return sb.ToString().Trim();
         }
 
+        public string RevealPrivateMethods(string className)
+        {
+            StringBuilder sb = new StringBuilder();
+
+
+            return sb.ToString().Trim();
+        }
+
         public string StealFieldInfo(string investigatedClass, params string[] infos)
         {
             StringBuilder sb = new StringBuilder();
