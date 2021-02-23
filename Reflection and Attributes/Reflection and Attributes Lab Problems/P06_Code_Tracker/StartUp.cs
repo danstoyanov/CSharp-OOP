@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace P06_5.Create_Attribute 
+namespace P05.Create_Attribute 
 {
     public class StartUp
     {
