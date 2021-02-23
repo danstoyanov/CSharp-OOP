@@ -7,5 +7,7 @@
         string AnalyzeAcessModifiers(string className);
 
         string RevealPrivateMethods(string className);
+
+        string CollectGettersAndSetters(string className);
     }
 }
