@@ -56,10 +56,19 @@ namespace Stealer
             // all private methods in className !!!!!
             StringBuilder sb = new StringBuilder();
 
+            Type currentSpyType = Type.GetType(className);
 
+            MethodInfo[] mainClassPrivateMethods = currentSpyType.GetMethods(
+                BindingFlags.Instance |
+                BindingFlags.NonPublic);
 
+            sb.AppendLine($"All Private Methods of Class: {currentSpyType.FullName}");
+            sb.AppendLine($"Base Class: {currentSpyType.BaseType.Name}");
 
-
+            foreach (MethodInfo method in mainClassPrivateMethods)
+            {
+                sb.AppendLine($"{method.Name}");
+            }
 
             return sb.ToString().Trim();
         }

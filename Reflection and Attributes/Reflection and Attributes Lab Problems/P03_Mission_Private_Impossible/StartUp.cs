@@ -10,7 +10,7 @@ namespace Stealer
 
             string result = spy.RevealPrivateMethods("Stealer.Hacker");
 
-            Console.WriteLine();
+            Console.WriteLine(result);
         }
     }
 }
