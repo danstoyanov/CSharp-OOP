@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace P02_High_Quality_Mistakes
+namespace Stealer
 {
-    class StartUp
+    public class StartUp
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+
         }
     }
 }
