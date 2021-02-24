@@ -14,17 +14,20 @@ namespace CommandPattern.Core.Commands
                 .ToArray();
             string commandName = tokens[0];
 
-            string result = "";
+            ICommand command = null;
 
             if (commandName == "Hello")
             {
-                result = $"Hello, {tokens[1]}";
+                command = new HelloCommand();
             }
             else if (commandName == "Exit")
             {
-                Environment.Exit(0);
+                command = new ExitCommand();
             }
 
+            string[] readData = tokens.Skip(1).ToArray();
+            string result = command.Execute(readData);
+            
             return result;
         }
     }

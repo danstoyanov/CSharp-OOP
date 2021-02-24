@@ -8,7 +8,8 @@ namespace CommandPattern.Core.Commands
     {
         public string Execute(string[] args)
         {
-            return $"Hello, {args[0]}";
+            string result = $"Hello, {args[0]}";
+            return result;
         }
     }
 }
