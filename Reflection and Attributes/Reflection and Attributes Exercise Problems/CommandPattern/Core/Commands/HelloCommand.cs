@@ -8,7 +8,7 @@ namespace CommandPattern.Core.Commands
     {
         public string Execute(string[] args)
         {
-            throw new NotImplementedException();
+            return $"Hello, {args[0]}";
         }
     }
 }
