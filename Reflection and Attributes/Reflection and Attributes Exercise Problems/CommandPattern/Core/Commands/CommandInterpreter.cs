@@ -1,5 +1,7 @@
-﻿using CommandPattern.Core.Contracts;
+﻿using System;
 using System.Linq;
+
+using CommandPattern.Core.Contracts;
 
 namespace CommandPattern.Core.Commands
 {
@@ -7,13 +9,23 @@ namespace CommandPattern.Core.Commands
     {
         public string Read(string args)
         {
-            var strArr = args
+            string[] tokens = args
                 .Split()
                 .ToArray();
+            string commandName = tokens[0];
 
+            string result = "";
 
+            if (commandName == "Hello")
+            {
+                result = $"Hello, {tokens[1]}";
+            }
+            else if (commandName == "Exit")
+            {
+                Environment.Exit(0);
+            }
 
-            return null;
+            return result;
         }
     }
 }
