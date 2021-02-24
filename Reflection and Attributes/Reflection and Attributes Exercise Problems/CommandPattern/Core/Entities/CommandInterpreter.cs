@@ -24,6 +24,11 @@ namespace CommandPattern.Core.Commands
             {
                 command = new ExitCommand();
             }
+            else
+            {
+                throw new InvalidOperationException("Invalid command name!");
+            }
+
 
             string[] readData = tokens.Skip(1).ToArray();
             string result = command.Execute(readData);

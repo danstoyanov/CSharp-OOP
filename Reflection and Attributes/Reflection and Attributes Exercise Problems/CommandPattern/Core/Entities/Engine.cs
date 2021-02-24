@@ -18,9 +18,16 @@ namespace CommandPattern.Core.Entities
         {
             while (true)
             {
-                string input = Console.ReadLine();
-                string result = this.commandInterpreter.Read(input);
-                Console.WriteLine(result);
+                try
+                {
+                    string input = Console.ReadLine();
+                    string result = this.commandInterpreter.Read(input);
+                    Console.WriteLine(result);
+                }
+                catch (InvalidOperationException msg)
+                {
+                    Console.WriteLine(msg.Message);
+                }
             }
         }
     }
