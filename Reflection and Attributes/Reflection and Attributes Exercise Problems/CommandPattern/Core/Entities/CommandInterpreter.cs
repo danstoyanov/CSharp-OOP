@@ -38,18 +38,6 @@ namespace CommandPattern.Core.Commands
             string result = command.Execute(readData);
 
             return result;
-            //if (commandName == "Hello")
-            //{
-            //    command = new HelloCommand();
-            //}
-            //else if (commandName == "Exit")
-            //{
-            //    command = new ExitCommand();
-            //}
-            //else
-            //{
-            //    throw new InvalidOperationException("Invalid command name!");
-            //}
         }
     }
 }
