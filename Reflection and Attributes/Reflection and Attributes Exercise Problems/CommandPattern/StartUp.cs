@@ -1,14 +1,18 @@
 ﻿using System;
 
+using CommandPattern.Core.Entities;
+using CommandPattern.Core.Commands;
+using CommandPattern.Core.Contracts;
+
 namespace CommandPattern
 {
     public class StartUp
     {
         public static void Main(string[] args)
         {
-            //ICommandInterpreter command = new CommandInterpreter();
-            //IEngine engine = new Engine(command);
-            //engine.Run();
+            ICommandInterpreter command = new CommandInterpreter();
+            IEngine engine = new Engine(command);
+            engine.Run();
         }
     }
 }
