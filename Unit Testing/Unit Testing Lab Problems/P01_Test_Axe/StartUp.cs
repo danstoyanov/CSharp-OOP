@@ -2,7 +2,7 @@
 
 namespace P01_Test_Axe
 {
-    class StartUp
+    public class StartUp
     {
         static void Main(string[] args)
         {
