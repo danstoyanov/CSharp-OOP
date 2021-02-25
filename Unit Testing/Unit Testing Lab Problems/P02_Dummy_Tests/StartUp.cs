@@ -2,7 +2,7 @@
 
 namespace P02_Dummy_Tests
 {
-    public class Program
+    public class StartUp
     {
         static void Main(string[] args)
         {
