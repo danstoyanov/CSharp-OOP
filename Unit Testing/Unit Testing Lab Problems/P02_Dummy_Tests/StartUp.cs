@@ -4,7 +4,7 @@ namespace P02_Dummy_Tests
 {
     public class StartUp
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
 
         }
