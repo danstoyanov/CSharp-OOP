@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03_Car_Manager", "P03_Car_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P04_Fighting_Arena", "P04_Fighting_Arena\P04_Fighting_Arena.csproj", "{BF4A76DA-3B9C-4D65-BA19-448F0B60E35C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P01_Database_Tests", "P01_Database_Tests\P01_Database_Tests.csproj", "{4095A174-6EE0-4033-8345-D6232CB0A42C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{BF4A76DA-3B9C-4D65-BA19-448F0B60E35C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF4A76DA-3B9C-4D65-BA19-448F0B60E35C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF4A76DA-3B9C-4D65-BA19-448F0B60E35C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4095A174-6EE0-4033-8345-D6232CB0A42C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4095A174-6EE0-4033-8345-D6232CB0A42C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4095A174-6EE0-4033-8345-D6232CB0A42C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4095A174-6EE0-4033-8345-D6232CB0A42C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
