@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03_MyTestDemos.Tests", "P0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03_TestDemos.UnitTest", "P03_TestDemos.NTests\P03_TestDemos.UnitTest.csproj", "{4B798D81-4035-4556-9725-EB2C4F215F21}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "AxeTests.Tests\Tests.csproj", "{BDCEC827-ABDB-4305-B321-56EB88FD8EDE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{4B798D81-4035-4556-9725-EB2C4F215F21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B798D81-4035-4556-9725-EB2C4F215F21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B798D81-4035-4556-9725-EB2C4F215F21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDCEC827-ABDB-4305-B321-56EB88FD8EDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDCEC827-ABDB-4305-B321-56EB88FD8EDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDCEC827-ABDB-4305-B321-56EB88FD8EDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDCEC827-ABDB-4305-B321-56EB88FD8EDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

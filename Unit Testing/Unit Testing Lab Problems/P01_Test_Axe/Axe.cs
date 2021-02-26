@@ -6,6 +6,10 @@ public class Axe
     private int attackPoints;
     private int durabilityPoints;
 
+    public Axe()
+    {
+    }
+
     public Axe(int attack, int durability)
     {
         this.attackPoints = attack;
