@@ -13,8 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\P01_Test_Axe\P01_Test_Axe.csproj" />
-    <ProjectReference Include="..\P02_Dummy_Tests\P02_Dummy_Tests.csproj" />
+    <ProjectReference Include="..\P02_Dummy_Tests\P02_Dummy_Test_Tests.csproj" />
   </ItemGroup>
 
 </Project>

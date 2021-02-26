@@ -5,17 +5,17 @@ VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P01_Test_Axe", "P01_Test_Axe\P01_Test_Axe.csproj", "{5C716C39-E58B-4CE7-81C7-A7E8C2D45B74}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P02_Dummy_Tests", "P02_Dummy_Tests\P02_Dummy_Tests.csproj", "{2FE19330-2A10-4696-9ECF-B031EB109C50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P02_Dummy_Test_Tests", "P02_Dummy_Tests\P02_Dummy_Test_Tests.csproj", "{2FE19330-2A10-4696-9ECF-B031EB109C50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03_MyTestDemos.App", "P03_My_Demos\P03_MyTestDemos.App.csproj", "{5886FDAE-5774-4166-9705-93BF9E646F62}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03_MyTestDemos_App", "P03_My_Demos\P03_MyTestDemos_App.csproj", "{5886FDAE-5774-4166-9705-93BF9E646F62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03_MyTestDemos.Tests", "P03.MyTestDemos.Tests\P03_MyTestDemos.Tests.csproj", "{8D78CC93-80B6-43D8-BBF4-4FC3CA2FD324}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03_MyTestDemos_Tests", "P03.MyTestDemos.Tests\P03_MyTestDemos_Tests.csproj", "{8D78CC93-80B6-43D8-BBF4-4FC3CA2FD324}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03_TestDemos.UnitTest", "P03_TestDemos.NTests\P03_TestDemos.UnitTest.csproj", "{4B798D81-4035-4556-9725-EB2C4F215F21}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03_TestDemos_UnitTest", "P03_TestDemos.NTests\P03_TestDemos_UnitTest.csproj", "{4B798D81-4035-4556-9725-EB2C4F215F21}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P01_Test_Axe.Tests", "AxeTests.Tests\P01_Test_Axe.Tests.csproj", "{BDCEC827-ABDB-4305-B321-56EB88FD8EDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P02_Dummy.Tests", "P02_Dummy.Tests\P02_Dummy.Tests.csproj", "{E6DA6C50-F40F-47B7-BFA5-F10F440ED924}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P02_Dummy_Tests", "P02_Dummy.Tests\P02_Dummy_Tests.csproj", "{E6DA6C50-F40F-47B7-BFA5-F10F440ED924}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

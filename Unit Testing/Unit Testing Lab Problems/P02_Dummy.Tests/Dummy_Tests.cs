@@ -6,7 +6,7 @@ namespace Tests
     public class Dummy_Tests
     {
         [Test]
-        public void DummyHealthLosesWhenIsAttacked()
+        public void Dummy_Health_Loses_When_Is_Attacked()
         {
             // Arrange
             var dummy = new Dummy(100, 500);
@@ -20,7 +20,7 @@ namespace Tests
         }
 
         [Test]
-        public void DummyThrowsExceptionIfHeDead()
+        public void Dummy_Throws_Exception_If_He_Dead()
         {
             // Arrange
             var dummy = new Dummy(0, 500);
@@ -36,7 +36,7 @@ namespace Tests
         }
 
         [Test]
-        public void DummyShouldGiveXPIfDead()
+        public void Dummy_Should_Give_XP_If_Dead()
         {
             // Arrange
             var dummy = new Dummy(0, 100);
@@ -49,7 +49,7 @@ namespace Tests
         }
 
         [Test]
-        public void DummyShouldNotGiveXPIfAlive()
+        public void Dummy_Should_Not_Give_XP_If_Alive()
         {
             // Arrange
             var dummy = new Dummy(5, 100);

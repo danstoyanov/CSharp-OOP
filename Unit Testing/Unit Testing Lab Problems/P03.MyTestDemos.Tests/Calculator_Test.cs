@@ -5,10 +5,10 @@ using P03MyTestDemos.App;
 
 namespace P03.MyTestDemos.Tests
 {
-    public class CalculatorTest
+    public class Calculator_Test
     {
         [Fact]
-        public void SumShouldReturnCorrectResultWithTwoNumbers()
+        public void Sum_Should_Return_Correct_Result_With_Two_Numbers()
         {
             var calculator = new Calculator();
 
@@ -18,7 +18,7 @@ namespace P03.MyTestDemos.Tests
         }
         
         [Fact]
-        public void SumShouldReturnCorrectResultWithManyNumbers()
+        public void Sum_Should_Return_Correct_Result_With_Many_Numbers()
         {
             var calculator = new Calculator();
 
@@ -28,7 +28,7 @@ namespace P03.MyTestDemos.Tests
         }
 
         [Fact]
-        public void SumShouldReturnCorrectResultWithNoNumbers()
+        public void Sum_Should_Return_Correct_Result_With_No_Numbers()
         {
             var calculator = new Calculator();
 

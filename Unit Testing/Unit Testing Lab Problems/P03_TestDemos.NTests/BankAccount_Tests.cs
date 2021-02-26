@@ -5,7 +5,7 @@ using P03_MyTestDemos.App;
 namespace P03_TestDemos.UnitTest
 {
     [TestFixture]
-    public class BankAccountTests
+    public class BankAccount_Tests
     {
         [Test]
         public void CreatingBankAccountShouldSetInitialAmount()

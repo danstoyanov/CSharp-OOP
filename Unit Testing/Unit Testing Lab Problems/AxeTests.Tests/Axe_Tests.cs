@@ -6,7 +6,7 @@ namespace Tests
     public class Tests
     {
         [Test]
-        public void TestWeaponLosingDurabilityAfterEachAttack()
+        public void Test_Weapon_Losing_Durability_After_Each_Attack()
         {
             // Arrenge
             Axe axe = new Axe(10, 5);
@@ -20,7 +20,7 @@ namespace Tests
         }
 
         [Test]
-        public void TestAxeShouldThrowExceptionIfAnAttackIsMadeWithBrokenWeapon()
+        public void Test_Axe_Should_Throw_Exception_If_An_Attack_Is_Made_With_Broken_Weapon()
         {
             // Arrange
             Axe axe = new Axe(10, 0);
