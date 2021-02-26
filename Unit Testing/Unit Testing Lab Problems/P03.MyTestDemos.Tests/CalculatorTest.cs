@@ -7,6 +7,7 @@ namespace P03.MyTestDemos.Tests
 {
     public class CalculatorTest
     {
+        [Fact]
         public void SumShouldReturnCorrectResultWithTwoNumbers()
         {
             Calculator calculator = new Calculator();
@@ -18,7 +19,8 @@ namespace P03.MyTestDemos.Tests
                 throw new InvalidOperationException("SumShouldReturnCorrectResultWithTwoNumbers failed !");
             }
         }
-
+        
+        [Fact]
         public void SumShouldReturnCorrectResultWithManyNumbers()
         {
             Calculator calculator = new Calculator();
@@ -30,6 +32,8 @@ namespace P03.MyTestDemos.Tests
                 throw new InvalidOperationException("SumShouldReturnCorrectResultWithTwoNumbers failed !");
             }
         }
+
+        [Fact]
         public void SumShouldReturnCorrectResultWithNoNumbers()
         {
             Calculator calculator = new Calculator();
