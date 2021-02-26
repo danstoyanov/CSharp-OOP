@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P01_Test_Axe", "P01_Test_Axe\P01_Test_Axe.csproj", "{5C716C39-E58B-4CE7-81C7-A7E8C2D45B74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P01_Test_Axe", "P01_Test_Axe\P01_Test_Axe.csproj", "{5C716C39-E58B-4CE7-81C7-A7E8C2D45B74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P02_Dummy_Tests", "P02_Dummy_Tests\P02_Dummy_Tests.csproj", "{2FE19330-2A10-4696-9ECF-B031EB109C50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P02_Dummy_Tests", "P02_Dummy_Tests\P02_Dummy_Tests.csproj", "{2FE19330-2A10-4696-9ECF-B031EB109C50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03MyTestDemos.App", "P03_My_Demos\P03MyTestDemos.App.csproj", "{5886FDAE-5774-4166-9705-93BF9E646F62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{2FE19330-2A10-4696-9ECF-B031EB109C50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FE19330-2A10-4696-9ECF-B031EB109C50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FE19330-2A10-4696-9ECF-B031EB109C50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5886FDAE-5774-4166-9705-93BF9E646F62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5886FDAE-5774-4166-9705-93BF9E646F62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5886FDAE-5774-4166-9705-93BF9E646F62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5886FDAE-5774-4166-9705-93BF9E646F62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
