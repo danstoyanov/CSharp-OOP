@@ -14,6 +14,8 @@ namespace P03.MyTestDemos.Tests
 
             var result = calculator.Sum(1, 2);
 
+            Assert.Equal(3, result);
+
             if (result != 3)
             {
                 throw new InvalidOperationException("SumShouldReturnCorrectResultWithTwoNumbers failed !");
@@ -27,6 +29,8 @@ namespace P03.MyTestDemos.Tests
 
             var result = calculator.Sum(1, 2, 3, 4, 5, 6);
 
+            Assert.Equal(21, result);
+
             if (result != 21)
             {
                 throw new InvalidOperationException("SumShouldReturnCorrectResultWithTwoNumbers failed !");
@@ -39,6 +43,8 @@ namespace P03.MyTestDemos.Tests
             Calculator calculator = new Calculator();
 
             var result = calculator.Sum();
+
+            Assert.Equal(0, result);
 
             if (result != 0)
             {
