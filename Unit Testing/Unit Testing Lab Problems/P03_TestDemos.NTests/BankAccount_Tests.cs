@@ -8,7 +8,7 @@ namespace P03_TestDemos.UnitTest
     public class BankAccount_Tests
     {
         [Test]
-        public void CreatingBankAccountShouldSetInitialAmount()
+        public void Creating_Bank_Account_Should_Set_Initial_Amount()
         {
             //Arrange
             const int amount = 2000;
