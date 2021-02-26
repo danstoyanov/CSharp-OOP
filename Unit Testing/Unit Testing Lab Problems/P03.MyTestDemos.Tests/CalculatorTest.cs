@@ -15,11 +15,6 @@ namespace P03.MyTestDemos.Tests
             var result = calculator.Sum(1, 2);
 
             Assert.Equal(3, result);
-
-            if (result != 3)
-            {
-                throw new InvalidOperationException("SumShouldReturnCorrectResultWithTwoNumbers failed !");
-            }
         }
         
         [Fact]
