@@ -44,7 +44,7 @@ namespace P03.MyTestDemos.Tests
 
             var result = calculator.Product(2, 3);
 
-            Assert.Equal(6, result);
+            Assert.Equal(3131313, result);
         }
     }
 }

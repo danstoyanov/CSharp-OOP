@@ -7,11 +7,17 @@ namespace P03_TestDemos.UnitTest
     [TestFixture]
     public class BankAccountTests
     {
+        [Test]
         public void CreatingBankAccountShouldSetInitialAmount()
         {
-            var bankAccount = new BankAccount(2000);
+            //Arrange
+            const int amount = 2000;
 
-            Assert.AreEqual(2000, bankAccount.Ammount);
+            // Act
+            var bankAccount = new BankAccount(amount);
+
+            //Assert 
+            Assert.That(bankAccount.Ammount, Is.EqualTo(amount));
         }
     }
 }

@@ -1,12 +1,7 @@
-﻿using System;
-
-namespace P01_Test_Axe
+﻿public class StartUp
 {
-    public class StartUp
+    static void Main(string[] args)
     {
-        public static void Main(string[] args)
-        {
 
-        }
     }
 }
