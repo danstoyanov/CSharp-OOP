@@ -34,19 +34,5 @@ namespace Tests
                 .Message
                 .EqualTo("Axe is broken."));
         }
-
-        [Test]
-        public void DummyHealthLosesWhenIsAttacked()
-        {
-            // Arrange
-            var dummy = new Dummy(100, 500);
-            var attackPoints = 99;
-
-            // Act
-            dummy.TakeAttack(attackPoints);
-
-            // Assert
-            Assert.That(dummy.Health, Is.EqualTo(1));
-        }
     }
 }
