@@ -45,7 +45,16 @@ namespace Tests
         [Test]
         public void Remove_Element_From_Empty_Array_And_Throw_Exception()
         {
+            // Arrange
+            var data = new Database();
 
+            // Assert
+            Assert.That(() => data.Remove(),
+                Throws
+                .InvalidOperationException
+                .With
+                .Message
+                .EqualTo("The collection is empty!"));
         }
     }
 }
