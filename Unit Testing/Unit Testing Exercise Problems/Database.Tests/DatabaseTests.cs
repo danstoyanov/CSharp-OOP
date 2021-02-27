@@ -41,5 +41,11 @@ namespace Tests
                 .Message
                 .EqualTo("Array's capacity must be exactly 16 integers!"));
         }
+
+        [Test]
+        public void Remove_Element_From_Empty_Array_And_Throw_Exception()
+        {
+
+        }
     }
 }
