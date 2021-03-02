@@ -13,21 +13,16 @@ namespace Tests
         }
 
         [Test]
-        public void User_With_Same_Username_Exception()
+        public void Test_For_Invalid_Operation_Exeptin_When_Username_Already_Exist()
         {
+            var data = new ExtendedDatabase.ExtendedDatabase(new Person(123133, "Gicho"));
+
             //Arrange
-            var testPerson = new Person(31313131, "Gesha");
-            var data = new ExtendedDatabase(new Person(31313131, "Gesha"));
+
 
             //Act
 
             //Assert
-            Assert.That(() => data.Add(TEST_PERSON),
-                Throws
-                .InvalidOperationException
-                .With
-                .Message
-                .EqualTo("There is already user with this username!"));
         }
     }
 }
