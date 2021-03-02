@@ -17,7 +17,7 @@ namespace Tests
         public void Capacity_Test_Are_Equal_To_Sixteen()
         {
             // Arrange
-            var data = new Database(this.testArray);
+            var data = new Database.Database(this.testArray);
 
             // Act
             var arrSize = this.testArray.Length;
@@ -47,7 +47,7 @@ namespace Tests
         public void Remove_Element_From_Empty_Array_And_Throw_Exception()
         {
             // Arrange
-            var data = new Database();
+            var data = new Database.Database();
 
             // Assert
             Assert.That(() => data.Remove(),
