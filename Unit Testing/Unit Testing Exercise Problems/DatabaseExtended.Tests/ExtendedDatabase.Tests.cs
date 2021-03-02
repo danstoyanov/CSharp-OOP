@@ -39,5 +39,20 @@ namespace Tests
            data.Remove(), "The collection is empty!");
         }
 
+        [Test]
+        public void Test_Find_By_Username_When_The_Name_Is_Empry()
+        {
+            var username = "";
+            var data = new ExtendedDatabase.ExtendedDatabase(new Person(1234, ""));
+
+            Assert.Throws<ArgumentNullException>(() =>
+            data.FindByUsername(username), "Username parameter is null!");
+        }
+
+        [Test]
+        public void Test_If_No_User_With_Current_Username()
+        {
+            var data = new ExtendedDatabase.ExtendedDatabase();
+        }
     }
 }
