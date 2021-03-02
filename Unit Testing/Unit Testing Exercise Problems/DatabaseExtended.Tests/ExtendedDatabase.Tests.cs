@@ -69,5 +69,14 @@ namespace Tests
             Assert.Throws<InvalidOperationException>(() =>
             data.FindById(ID), "No user is present by this ID!");
         }
+
+        [Test]
+        public void Test_If_ID_Is_Our_Of_Range_Exeption()
+        {
+            var data = new ExtendedDatabase.ExtendedDatabase(new Person(-232, "Chicho"));
+
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
+            data.FindById(-232), "Id should be a positive number!");
+        }
     }
 }
