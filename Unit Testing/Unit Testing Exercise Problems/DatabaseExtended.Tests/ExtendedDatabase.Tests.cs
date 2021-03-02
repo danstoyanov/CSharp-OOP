@@ -31,9 +31,13 @@ namespace Tests
         }
 
         [Test]
-        public void Test_For_Alredy_Removed_Person()
+        public void Test_If_Trying_To_Remove_Person_When_Collection_Is_Empty()
         {
-            var data = new ExtendedDatabase.ExtendedDatabase()
+            var data = new ExtendedDatabase.ExtendedDatabase();
+
+            Assert.Throws<InvalidOperationException>(() =>
+           data.Remove(), "The collection is empty!");
         }
+
     }
 }
