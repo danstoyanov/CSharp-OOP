@@ -32,7 +32,7 @@ namespace Tests
             // Arrange
             const int ADD_VALUE = 23;
 
-            var data = new Database(this.testArray);
+            var data = new Database.Database(this.testArray);
 
             // Assert
             Assert.That(() => data.Add(ADD_VALUE),
