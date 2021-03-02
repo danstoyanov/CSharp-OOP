@@ -52,7 +52,22 @@ namespace Tests
         [Test]
         public void Test_If_No_User_With_Current_Username()
         {
+            var username = "Malin";
             var data = new ExtendedDatabase.ExtendedDatabase();
+
+            Assert.Throws<InvalidOperationException>(() =>
+            data.FindByUsername(username), "No user is present by this username!");
+        }
+
+        [Test]
+        public void Test_If_No_User_By_This_ID_Number_Exeption()
+        {
+            long ID = 123;
+
+            var data = new ExtendedDatabase.ExtendedDatabase();
+
+            Assert.Throws<InvalidOperationException>(() =>
+            data.FindById(ID), "No user is present by this ID!");
         }
     }
 }
