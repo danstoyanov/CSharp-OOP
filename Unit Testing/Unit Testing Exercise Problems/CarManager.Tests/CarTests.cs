@@ -23,36 +23,27 @@ namespace Tests
         [Test]
         public void Test_Car_Class_Implementation_Correctly()
         {
-            // Arrange
-            var car = new Car(make, model, fuelConsimption, fuelCapacity);
-
             // Assert
-            Assert.AreEqual(make, car.Make);
-            Assert.AreEqual(model, car.Model);
-            Assert.AreEqual(fuelConsimption, car.FuelConsumption);
-            Assert.AreEqual(fuelCapacity, car.FuelCapacity);
+            Assert.AreEqual(make, this.car.Make);
+            Assert.AreEqual(model, this.car.Model);
+            Assert.AreEqual(fuelConsimption, this.car.FuelConsumption);
+            Assert.AreEqual(fuelCapacity, this.car.FuelCapacity);
         }
 
         [Test]
         public void Test_Make_If_Is_Empty_And_Throw_Argument_Exception_MSG()
         {
-            // Arrange
-            var car = new Car(make, model, fuelConsimption, fuelCapacity);
-
             //Assert
             Assert.Throws<ArgumentException>(() =>
-            car = new Car("", model, fuelConsimption, fuelCapacity), "Make cannot be null or empty!");
+            this.car = new Car("", model, fuelConsimption, fuelCapacity), "Make cannot be null or empty!");
         }
 
         [Test]
         public void Test_Make_If_Is_Null_And_Throw_Argument_Exception_MSG()
         {
-            // Arrange
-            var car = new Car(make, model, fuelConsimption, fuelCapacity);
-
             // Assert
             Assert.Throws<ArgumentException>(() =>
-            car = new Car(null, model, fuelConsimption, fuelCapacity), "Make cannot be null or empty!");
+            this.car = new Car(null, model, fuelConsimption, fuelCapacity), "Make cannot be null or empty!");
         }
 
         [Test]
