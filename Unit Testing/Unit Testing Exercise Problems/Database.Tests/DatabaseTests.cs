@@ -5,19 +5,21 @@ namespace Tests
     [TestFixture]
     public class DatabaseTests
     {
-        private int[] testArray = new int[16];
+        private readonly int[] testArray = new int[16];
+        private Database.Database data;
 
         [SetUp]
         public void Setup()
         {
-
+            this.data = new Database.Database();
         }
 
+        // how to test constructor ! ! ! ! 
         [Test]
         public void Capacity_Test_Are_Equal_To_Sixteen()
         {
             // Arrange
-            var data = new Database.Database(this.testArray);
+            this.data = new Database.Database(this.testArray);
 
             // Act
             var arrSize = this.testArray.Length;
@@ -32,7 +34,7 @@ namespace Tests
             // Arrange
             const int ADD_VALUE = 23;
 
-            var data = new Database.Database(this.testArray);
+            this.data = new Database.Database(this.testArray);
 
             // Assert
             Assert.That(() => data.Add(ADD_VALUE),
@@ -47,7 +49,7 @@ namespace Tests
         public void Remove_Element_From_Empty_Array_And_Throw_Exception()
         {
             // Arrange
-            var data = new Database.Database();
+            this.data = new Database.Database();
 
             // Assert
             Assert.That(() => data.Remove(),
