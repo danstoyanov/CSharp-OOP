@@ -75,5 +75,7 @@ namespace Tests
             Assert.Throws<ArgumentException>(() =>
             this.car = new Car(make, model, -1, fuelCapacity), "Fuel consumption cannot be zero or negative!");
         }
+
+        []
     }
 }
