@@ -5,7 +5,7 @@ namespace Tests
     [TestFixture]
     public class DatabaseTests
     {
-        private readonly int[] testArray = new int[16];
+        private readonly int[] array = new int[16];
         private Database.Database data;
 
         [SetUp]
@@ -14,18 +14,19 @@ namespace Tests
             this.data = new Database.Database();
         }
 
-        // how to test constructor ! ! ! ! 
-        [Test]
-        public void Capacity_Test_Are_Equal_To_Sixteen()
+        [TestCase(new int[] { 1, 2, 3, 4})]
+        [TestCase(new int[] { })]
+        public void Capacity_Test_Are_Equal_To_Sixteen(int[] array)
         {
             // Arrange
-            this.data = new Database.Database(this.testArray);
+            this.data = new Database.Database(array);
 
             // Act
-            var arrSize = this.testArray.Length;
+            int expectedCount = array.Length;
+            int actualCount = this.data.Count;
 
             // Assert
-            Assert.AreEqual(data.Count, arrSize);
+            Assert.AreEqual(expectedCount, actualCount);
         }
 
         [Test]
@@ -34,7 +35,7 @@ namespace Tests
             // Arrange
             const int ADD_VALUE = 23;
 
-            this.data = new Database.Database(this.testArray);
+            this.data = new Database.Database(this.array);
 
             // Assert
             Assert.That(() => data.Add(ADD_VALUE),
