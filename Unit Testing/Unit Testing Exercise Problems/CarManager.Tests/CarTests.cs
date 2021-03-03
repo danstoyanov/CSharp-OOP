@@ -97,6 +97,5 @@ namespace Tests
             Assert.Throws<ArgumentException>(() =>
             this.car.Refuel(refuelAmount), "Fuel amount cannot be zero or negative!");
         }
-
     }
 }
