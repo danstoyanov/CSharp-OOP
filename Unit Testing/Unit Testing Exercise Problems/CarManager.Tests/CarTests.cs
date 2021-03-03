@@ -32,7 +32,7 @@ namespace Tests
         }
 
         [Test]
-        public void Test_Make_If_Is_Null_Or_Empty_And_Throw_Exception_MSG()
+        public void Test_Make_If_Is_Empty_And_Throw_Argument_Exception_MSG()
         {
             // Arrange
             var car = new Car(make, model, fuelConsimption, fuelCapacity);
@@ -40,6 +40,12 @@ namespace Tests
             //Assert
             Assert.Throws<ArgumentException>(() =>
             car = new Car("", model, fuelConsimption, fuelCapacity), "Make cannot be null or empty!");
+        }
+
+        [Test]
+        public void Test_Make_If_Is_Null_And_Throw_Argument_Exception_MSG()
+        {
+
         }
     }
 }
