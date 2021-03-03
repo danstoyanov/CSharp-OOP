@@ -61,5 +61,19 @@ namespace Tests
             Assert.Throws<ArgumentException>(() =>
             this.car = new Car(make, null, fuelConsimption, fuelCapacity), "Model cannot be null or empty!");
         }
+
+        [Test]
+        public void Test_FuelConsumption_If_Equal_To_Zero_Throw_Argument_Exception_MSG()
+        {
+            Assert.Throws<ArgumentException>(() =>
+            this.car = new Car(make, model, 0, fuelCapacity), "Fuel consumption cannot be zero or negative!");
+        }
+
+        [Test]
+        public void Test_FuelConsumption_If_Less_Than_Zero_Throw_Argument_Exception_MSG()
+        {
+            Assert.Throws<ArgumentException>(() =>
+            this.car = new Car(make, model, -1, fuelCapacity), "Fuel consumption cannot be zero or negative!");
+        }
     }
 }
