@@ -97,5 +97,14 @@ namespace Tests
             Assert.Throws<ArgumentException>(() =>
             this.car.Refuel(refuelAmount), "Fuel amount cannot be zero or negative!");
         }
+
+        [Test]
+        public void Test_Drive_FuelNeeded_When_Increasing_FuelAmount_Ivalid_Operation_Exception_MSG()
+        {
+            var distance = 31313131;
+
+            Assert.Throws<InvalidOperationException>(() =>
+            this.car.Drive(distance), "You don't have enough fuel to drive!");
+        }
     }
 }
