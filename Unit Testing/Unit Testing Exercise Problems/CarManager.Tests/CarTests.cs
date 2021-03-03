@@ -90,11 +90,13 @@ namespace Tests
             this.car = new Car(make, model, fuelConsimption, -1), "Fuel capacity cannot be zero or negative!");
         }
 
-        [Test]
-        public void Test_FuelAmount_Is_Less_Than_Zero_Thow_Argument_Exception_MSG()
+        [TestCase(0)]
+        [TestCase(-1)]
+        public void Test_FuelAmount_Is_Less_Than_Zero_Thow_Argument_Exception_MSG(double refuelAmount)
         {
-            // Assert
-            Assert.Throws<ArgumentException>
+            Assert.Throws<ArgumentException>(() =>
+            this.car.Refuel(refuelAmount), "Fuel amount cannot be zero or negative!");
         }
+
     }
 }
