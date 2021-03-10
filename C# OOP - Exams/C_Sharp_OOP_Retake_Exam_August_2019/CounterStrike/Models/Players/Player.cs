@@ -89,6 +89,8 @@ namespace CounterStrike.Models.Players
             }
         }
 
+        bool IPlayer.IsAlive => throw new NotImplementedException();
+
         public bool IsAlive()
         {
             return this.Health != 0;
@@ -96,7 +98,7 @@ namespace CounterStrike.Models.Players
 
         public void TakeDamage(int points)
         {
-            throw new System.NotImplementedException();
+
         }
     }
 }
