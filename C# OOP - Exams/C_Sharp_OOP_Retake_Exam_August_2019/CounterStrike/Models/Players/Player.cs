@@ -1,8 +1,8 @@
-﻿
+﻿using System;
+
+using CounterStrike.Utilities.Messages;
 using CounterStrike.Models.Guns.Contracts;
 using CounterStrike.Models.Players.Contracts;
-using CounterStrike.Utilities.Messages;
-using System;
 
 namespace CounterStrike.Models.Players
 {
