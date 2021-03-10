@@ -96,7 +96,7 @@ namespace CounterStrike.Models.Players
             return this.Health != 0;
         }
 
-        public void TakeDamage(int points) // to Check !!!
+        public void TakeDamage(int points) 
         {
             if (this.Armor - points >= 0)
             {
@@ -105,7 +105,7 @@ namespace CounterStrike.Models.Players
             }
             else if (this.Armor > 0)
             {
-                this.Armor -= points;
+                points -= this.Armor;
                 this.Armor = 0;
             }
 
