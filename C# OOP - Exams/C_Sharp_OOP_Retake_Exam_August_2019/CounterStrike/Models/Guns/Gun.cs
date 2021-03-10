@@ -1,6 +1,7 @@
-﻿using CounterStrike.Models.Guns.Contracts;
+﻿using System;
+
 using CounterStrike.Utilities.Messages;
-using System;
+using CounterStrike.Models.Guns.Contracts;
 
 namespace CounterStrike.Models.Guns
 {
