@@ -2,9 +2,9 @@
 
 namespace CounterStrike.Models.Players
 {
-    public class Terrorist : Player
+    public class CounterTerrorist : Player
     {
-        public Terrorist(string username, int health, int armor, IGun gun) 
+        public CounterTerrorist(string username, int health, int armor, IGun gun) 
             : base(username, health, armor, gun)
         {
 
