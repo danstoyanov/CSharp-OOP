@@ -101,15 +101,15 @@ namespace CounterStrike.Models.Players
             if (this.Armor - points >= 0)
             {
                 this.Armor -= points;
+                return;
             }
-            else if (this.Health - points >= 0)
+            else if (this.Armor > 0)
             {
-                this.Health -= points;
+                this.Armor -= points;
+                this.Armor = 0;
             }
-            else
-            {
-                this.Health -= points;
-            }
+
+            this.Health -= points;
         }
     }
 }
