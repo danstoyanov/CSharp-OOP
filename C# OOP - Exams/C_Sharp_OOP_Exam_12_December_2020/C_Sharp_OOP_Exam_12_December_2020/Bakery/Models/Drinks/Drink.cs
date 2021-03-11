@@ -45,12 +45,52 @@ namespace Bakery.Models.Drinks
             }
             protected set
             {
+                if (value <= 0)
+                {
+                    throw new ArgumentException(string.Format(ExceptionMessages.InvalidPortion));
+                }
 
+                this.portion = value;
             }
         }
 
-        public decimal Price => throw new System.NotImplementedException();
+        public decimal Price
+        {
+            get
+            {
+                return this.price;
+            }
+            protected set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException(string.Format(ExceptionMessages.InvalidPrice));
+                }
 
-        public string Brand => throw new System.NotImplementedException();
+                this.price = value;
+            }
+        }
+
+        public string Brand
+        {
+            get
+            {
+                return this.brand;
+            }
+            protected set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException(string.Format(ExceptionMessages.InvalidBrand));
+                }
+
+                this.brand = value;
+            }
+        }
+
+        public override string ToString()
+        {
+            return $"{this.Name} {this.Brand} - {this.Portion}ml - {this.Price:F2}lv";
+        }
     }
 }
