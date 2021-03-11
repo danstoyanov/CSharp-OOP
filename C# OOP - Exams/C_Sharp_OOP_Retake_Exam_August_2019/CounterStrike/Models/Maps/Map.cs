@@ -42,7 +42,18 @@ namespace CounterStrike.Models.Maps
         {
             foreach (var attacker in attakingTeam)
             {
+                if (!attacker.IsAlive)
+                {
+                    continue;
+                }
 
+                foreach (var defender in defendingTeam)
+                {
+                    if (defender.IsAlive)
+                    {
+                        defender.TakeDamage(attacker.Gun.Fire());
+                    }
+                }
             }
         }
     }
