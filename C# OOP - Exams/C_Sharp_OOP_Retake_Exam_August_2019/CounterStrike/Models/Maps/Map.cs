@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 
+using CounterStrike.Models.Players;
 using CounterStrike.Models.Maps.Contracts;
 using CounterStrike.Models.Players.Contracts;
 
@@ -18,7 +19,17 @@ namespace CounterStrike.Models.Maps
 
         public string Start(ICollection<IPlayer> players)
         {
-
+            foreach (var player in players)
+            {
+                if (player is CounterTerrorist)
+                {
+                    counterTerrorists.Add(player);
+                }
+                else if (player is Terrorist)
+                {
+                    terrorists.Add(player);
+                }
+            }
         }
     }
 }
