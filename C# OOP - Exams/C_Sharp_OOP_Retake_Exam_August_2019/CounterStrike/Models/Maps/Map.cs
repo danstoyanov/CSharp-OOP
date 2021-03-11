@@ -19,6 +19,11 @@ namespace CounterStrike.Models.Maps
 
         public string Start(ICollection<IPlayer> players)
         {
+            SeparateTeams(players);
+        }
+
+        private void SeparateTeams(ICollection<IPlayer> players)
+        {
             foreach (var player in players)
             {
                 if (player is CounterTerrorist)
