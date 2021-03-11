@@ -27,6 +27,15 @@ namespace CounterStrike.Models.Maps
                 AttackTeam(this.terrorists, this.counterTerrorists);
                 AttackTeam(this.counterTerrorists, this.terrorists);
             }
+
+            if (IsTeamAlive(this.counterTerrorists))
+            {
+                return "Counter Terrorist wins!";
+            }
+            else if (IsTeamAlive(this.terrorists))
+            {
+                return "Terrorist wins!";
+            }
         }
 
         private bool IsTeamAlive(List<IPlayer> players)
