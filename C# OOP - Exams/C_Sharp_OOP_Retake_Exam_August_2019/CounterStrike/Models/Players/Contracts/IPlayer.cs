@@ -10,7 +10,7 @@
 
         int Armor { get; }
 
-        IGun Gun { get; }
+        Guns.Contracts.IGun Gun { get; }
 
         bool IsAlive { get; }
 

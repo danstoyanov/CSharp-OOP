@@ -6,14 +6,14 @@ using CounterStrike.Models.Players.Contracts;
 
 namespace CounterStrike.Models.Players
 {
-    public abstract class Player : IPlayer
+    public abstract class Player : Contracts.IPlayer
     {
         private string username;
         private int health;
         private int armor;
-        private IGun gun;
+        private Guns.Contracts.IGun gun;
 
-        public Player(string username, int health, int armor, IGun gun)
+        public Player(string username, int health, int armor, Guns.Contracts.IGun gun)
         {
             this.Username = username;
             this.Health = health;
@@ -72,7 +72,7 @@ namespace CounterStrike.Models.Players
             }
         }
 
-        public IGun Gun
+        public Guns.Contracts.IGun Gun
         {
             get
             {
@@ -89,7 +89,7 @@ namespace CounterStrike.Models.Players
             }
         }
 
-        bool IPlayer.IsAlive => throw new NotImplementedException();
+        bool Contracts.IPlayer.IsAlive => throw new NotImplementedException();
 
         public bool IsAlive()
         {
