@@ -20,6 +20,7 @@ namespace CounterStrike.Models.Maps
         public string Start(ICollection<IPlayer> players)
         {
             SeparateTeams(players);
+
         }
 
         private void SeparateTeams(ICollection<IPlayer> players)
@@ -35,6 +36,11 @@ namespace CounterStrike.Models.Maps
                     terrorists.Add(player);
                 }
             }
+        }
+
+        private void AttackTeam(List<IPlayer> attaking, List<IPlayer> defending)
+        {
+
         }
     }
 }
