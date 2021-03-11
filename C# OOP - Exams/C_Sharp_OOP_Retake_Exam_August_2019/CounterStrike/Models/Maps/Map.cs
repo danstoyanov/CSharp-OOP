@@ -36,6 +36,8 @@ namespace CounterStrike.Models.Maps
             {
                 return "Terrorist wins!";
             }
+
+            return "Something wrong is happened with my logic !!!";
         }
 
         private bool IsTeamAlive(List<IPlayer> players)
