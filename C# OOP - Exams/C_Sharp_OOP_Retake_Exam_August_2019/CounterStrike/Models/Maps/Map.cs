@@ -21,6 +21,11 @@ namespace CounterStrike.Models.Maps
         {
             SeparateTeams(players);
 
+            while (true)
+            {
+                AttackTeam(this.terrorists, this.counterTerrorists);
+                AttackTeam(this.counterTerrorists, this.terrorists);
+            }
         }
 
         private void SeparateTeams(ICollection<IPlayer> players)
