@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 
+using CounterStrike.Utilities.Messages;
 using CounterStrike.Models.Guns.Contracts;
 using CounterStrike.Repositories.Contracts;
-using CounterStrike.Utilities.Messages;
 
 namespace CounterStrike.Repositories
 {
@@ -31,12 +32,12 @@ namespace CounterStrike.Repositories
                 throw new ArgumentException(string.Format(ExceptionMessages.InvalidGunRepository));
             }
 
-
+            this.models.Add(model);
         }
 
         public IGun FindByName(string name)
         {
-            throw new System.NotImplementedException();
+            return this.models.FirstOrDefault(m => m.Name == name);
         }
 
         public bool Remove(IGun model)
