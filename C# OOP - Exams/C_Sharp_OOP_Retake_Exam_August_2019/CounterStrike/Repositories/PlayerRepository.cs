@@ -3,21 +3,21 @@ using System.Linq;
 using System.Collections.Generic;
 
 using CounterStrike.Utilities.Messages;
-using CounterStrike.Models.Guns.Contracts;
 using CounterStrike.Repositories.Contracts;
+using CounterStrike.Models.Players.Contracts;
 
 namespace CounterStrike.Repositories
 {
-    public class GunRepository : IRepository<IGun>
+    public class PlayerRepository : IRepository<IPlayer>
     {
-        private List<IGun> models;
+        private List<IPlayer> models;
 
-        public GunRepository()
+        public PlayerRepository()
         {
-            this.models = new List<IGun>();
+            this.models = new List<IPlayer>();
         }
 
-        public IReadOnlyCollection<IGun> Models
+        public IReadOnlyCollection<IPlayer> Models
         {
             get
             {
@@ -25,7 +25,7 @@ namespace CounterStrike.Repositories
             }
         }
 
-        public void Add(IGun model)
+        public void Add(IPlayer model)
         {
             if (model == null)
             {
@@ -35,12 +35,12 @@ namespace CounterStrike.Repositories
             this.models.Add(model);
         }
 
-        public IGun FindByName(string name)
+        public IPlayer FindByName(string name)
         {
-            return this.models.FirstOrDefault(m => m.Name == name);
+            return this.models.FirstOrDefault(m => m.Username == name);
         }
 
-        public bool Remove(IGun model)
+        public bool Remove(IPlayer model)
         {
             return this.models.Remove(model);
         }
