@@ -38,9 +38,12 @@ namespace CounterStrike.Models.Maps
             }
         }
 
-        private void AttackTeam(List<IPlayer> attaking, List<IPlayer> defending)
+        private void AttackTeam(List<IPlayer> attakingTeam, List<IPlayer> defendingTeam)
         {
+            foreach (var attacker in attakingTeam)
+            {
 
+            }
         }
     }
 }
