@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Linq;
+using System.Collections.Generic;
 
 using CounterStrike.Models.Players;
 using CounterStrike.Models.Maps.Contracts;
@@ -21,11 +22,16 @@ namespace CounterStrike.Models.Maps
         {
             SeparateTeams(players);
 
-            while (true)
+            while (IsTeamAlive(this.terrorists) && IsTeamAlive(this.counterTerrorists))
             {
                 AttackTeam(this.terrorists, this.counterTerrorists);
                 AttackTeam(this.counterTerrorists, this.terrorists);
             }
+        }
+
+        private bool IsTeamAlive(List<IPlayer> players)
+        {
+            return players.Any(p => p.IsAlive);
         }
 
         private void SeparateTeams(ICollection<IPlayer> players)
