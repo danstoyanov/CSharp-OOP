@@ -4,7 +4,7 @@
     {
         private const int INITIAL_CAKE_PORTION = 245;
 
-        public Cake(string name, int INITIAL_CAKE_PORTION, decimal price) 
+        public Cake(string name, decimal price) 
             : base(name, INITIAL_CAKE_PORTION, price)
         {
 
