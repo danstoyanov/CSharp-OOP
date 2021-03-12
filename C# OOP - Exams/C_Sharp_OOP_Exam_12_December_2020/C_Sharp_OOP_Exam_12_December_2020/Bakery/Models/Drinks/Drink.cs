@@ -26,7 +26,7 @@ namespace Bakery.Models.Drinks
             {
                 return this.name;
             }
-            protected set
+            private set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
@@ -43,7 +43,7 @@ namespace Bakery.Models.Drinks
             {
                 return this.portion;
             }
-            protected set
+            private set
             {
                 if (value <= 0)
                 {
@@ -60,7 +60,7 @@ namespace Bakery.Models.Drinks
             {
                 return this.price;
             }
-            protected set
+            private set
             {
                 if (value <= 0)
                 {
@@ -77,7 +77,7 @@ namespace Bakery.Models.Drinks
             {
                 return this.brand;
             }
-            protected set
+            private set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
