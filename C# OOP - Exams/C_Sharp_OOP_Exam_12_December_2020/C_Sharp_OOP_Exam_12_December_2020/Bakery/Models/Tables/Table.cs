@@ -1,4 +1,9 @@
-﻿
+﻿using System;
+using System.Linq;
+using System.Text;
+using System.Collections.Generic;
+
+using Bakery.Utilities.Messages;
 using Bakery.Models.Drinks.Contracts;
 using Bakery.Models.Tables.Contracts;
 using Bakery.Models.BakedFoods.Contracts;
@@ -7,46 +12,108 @@ namespace Bakery.Models.Tables
 {
     public abstract class Table : ITable
     {
-        public int TableNumber => throw new System.NotImplementedException();
+        private readonly List<IBakedFood> foods;
+        private readonly List<IDrink> drinks;
 
-        public int Capacity => throw new System.NotImplementedException();
+        private int capacity;
+        private int numberOfPeople;
 
-        public int NumberOfPeople => throw new System.NotImplementedException();
+        public Table(int tableNumber, int capacity, decimal pricePerPerson)
+        {
+            this.foods = new List<IBakedFood>();
+            this.drinks = new List<IDrink>();
 
-        public decimal PricePerPerson => throw new System.NotImplementedException();
+            this.TableNumber = tableNumber;
+            this.Capacity = capacity;
+            this.PricePerPerson = pricePerPerson;
+        }
 
-        public bool IsReserved => throw new System.NotImplementedException();
+        public int TableNumber { get; }
 
-        public decimal Price => throw new System.NotImplementedException();
+        public int Capacity
+        {
+            get
+            {
+                return this.capacity;
+            }
+            private set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException(string.Format(ExceptionMessages.InvalidTableCapacity));
+                }
+
+                this.capacity = value;
+            }
+        }
+
+        public int NumberOfPeople
+        {
+            get
+            {
+                return this.numberOfPeople;
+            }
+            private set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException(string.Format(ExceptionMessages.InvalidNumberOfPeople));
+                }
+
+                this.numberOfPeople = value;
+            }
+        }
+
+        public decimal PricePerPerson { get; }
+
+        public bool IsReserved { get; protected set; }
+
+        public decimal Price => this.NumberOfPeople * this.PricePerPerson;
 
         public void Clear()
         {
-            throw new System.NotImplementedException();
+            this.foods.Clear();
+            this.drinks.Clear();
+
+            this.IsReserved = false;
+            this.NumberOfPeople = 0;
         }
 
         public decimal GetBill()
         {
-            throw new System.NotImplementedException();
+            var foodsBillPrice = this.foods.Sum(f => f.Price);
+            var drinksBillPrice = this.drinks.Sum(d => d.Price);
+            var totalBillPrice = foodsBillPrice + drinksBillPrice + this.Price;
+
+            return totalBillPrice;
         }
 
         public string GetFreeTableInfo()
         {
-            throw new System.NotImplementedException();
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine($"Table: {this.TableNumber}");
+            sb.AppendLine($"Type: {this.GetType().Name}");
+            sb.AppendLine($"Capacity: {this.Capacity}");
+            sb.AppendLine($"Price per Person: {this.PricePerPerson}");
+
+            return sb.ToString().Trim();
         }
 
         public void OrderDrink(IDrink drink)
         {
-            throw new System.NotImplementedException();
+            this.drinks.Add(drink);
         }
 
         public void OrderFood(IBakedFood food)
         {
-            throw new System.NotImplementedException();
+            this.foods.Add(food);
         }
 
         public void Reserve(int numberOfPeople)
         {
-            throw new System.NotImplementedException();
+            this.NumberOfPeople = numberOfPeople;
+            this.IsReserved = true;
         }
     }
 }
