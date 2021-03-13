@@ -21,7 +21,7 @@ namespace Structure.Models.Drivers
 
         public double FuelConsumptionPerKm { get; private set; }
 
-        // To finish !!!
-        public double Speed => this.Car.
+        public virtual double  Speed => 
+            (this.Car.Hp + this.Car.Tyre.Degradation) / this.Car.FuelAmount;
     }
 }
