@@ -1,21 +1,27 @@
 ﻿using Structure.Models.Cars;
-using Structure.Models.Tyres;
 using Structure.Models.Drivers.Contracts;
 
 namespace Structure.Models.Drivers
 {
     public class Driver : IDriver
     {
-        public string Name => throw new System.NotImplementedException();
+        public Driver(string name, double totalTime, Car car, double fuelConsumptionPerKm)
+        {
+            this.Name = name;
+            this.TotalTime = totalTime;
+            this.Car = car;
+            this.FuelConsumptionPerKm = fuelConsumptionPerKm;
+        }
 
-        public double TotalTime => throw new System.NotImplementedException();
+        public string Name { get; private set; }
 
-        public double FuelConsumptionPerKm => throw new System.NotImplementedException();
+        public double TotalTime { get; private set; }
 
-        public double Speed => CurrentCar.Hp + 
+        public Car Car { get; private set; }
 
-        public Car CurrentCar { get; private set; }
+        public double FuelConsumptionPerKm { get; private set; }
 
-        private Tyre CurrentTyre { get; private set; }
+        // To finish !!!
+        public double Speed => this.Car.
     }
 }
