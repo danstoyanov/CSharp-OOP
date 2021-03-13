@@ -6,8 +6,6 @@
 
         double TotalTime { get; }
 
-        Car CurrentCar { get; }
-
         double FuelConsumptionPerKm { get; }
 
         double Speed { get; }

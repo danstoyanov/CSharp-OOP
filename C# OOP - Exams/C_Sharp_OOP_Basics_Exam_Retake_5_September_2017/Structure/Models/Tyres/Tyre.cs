@@ -2,7 +2,7 @@
 
 namespace Structure.Models.Tyres
 {
-    public class Tyres : ITyres
+    public class Tyre : ITyres
     {
         public string Name { get; private set; }
 
