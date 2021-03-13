@@ -1,10 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Structure.Models.Tyres.Contracts;
 
 namespace Structure.Models.Tyres
 {
-    class Tyres
+    public class Tyres : ITyres
     {
+        public string Name { get; private set; }
+
+        public double Hardness { get; private set; }
+
+        public double Degradation { get; private set; }
     }
 }
