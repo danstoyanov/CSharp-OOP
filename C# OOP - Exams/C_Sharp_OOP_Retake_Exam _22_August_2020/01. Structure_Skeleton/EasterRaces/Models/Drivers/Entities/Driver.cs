@@ -8,8 +8,6 @@ namespace EasterRaces.Models.Drivers.Entities
 {
     public class Driver : IDriver
     {
-        private const int MIN_DRIVER_NAME_SYMBOLS = 5;
-
         private string name;
 
         public Driver(string name)
@@ -25,9 +23,9 @@ namespace EasterRaces.Models.Drivers.Entities
             }
             private set
             {
-                if (string.IsNullOrEmpty(value) || value.Length < MIN_DRIVER_NAME_SYMBOLS)
+                if (string.IsNullOrEmpty(value) && value.Length < 5)
                 {
-                    throw new ArgumentException(String.Format(ExceptionMessages.InvalidName, value, MIN_DRIVER_NAME_SYMBOLS));
+                    throw new ArgumentException(string.Format(ExceptionMessages.InvalidName, value, 5));
                 }
 
                 this.name = value;
@@ -44,12 +42,17 @@ namespace EasterRaces.Models.Drivers.Entities
         {
             if (car == null)
             {
-                throw new ArgumentNullException(nameof(ICar), String.Format(ExceptionMessages.CarInvalid));
+                throw new ArgumentNullException(string.Format(ExceptionMessages.CarInvalid));
             }
-
-            this.Car = car;
+            else
+            {
+                this.Car = car;
+            }
         }
 
-        public void WinRace() => this.NumberOfWins++;
+        public void WinRace()
+        {
+            this.NumberOfWins++;
+        }
     }
 }

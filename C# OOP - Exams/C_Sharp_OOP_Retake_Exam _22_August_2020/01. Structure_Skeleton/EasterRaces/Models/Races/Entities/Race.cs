@@ -10,13 +10,10 @@ namespace EasterRaces.Models.Races.Entities
 {
     public class Race : IRace
     {
-        private const int MIN_RACE_NAME_SYMBOLS = 5;
-        private const int MIN_LAPS_VALUE = 1;
+        private readonly List<IDriver> drivers;
 
         private string name;
         private int laps;
-
-        private readonly List<IDriver> drivers;
 
         public Race(string name, int laps)
         {
@@ -33,9 +30,9 @@ namespace EasterRaces.Models.Races.Entities
             }
             private set
             {
-                if (string.IsNullOrEmpty(value) || value.Length < MIN_RACE_NAME_SYMBOLS)
+                if (string.IsNullOrEmpty(value) || value.Length < 5)
                 {
-                    throw new ArgumentException(String.Format(ExceptionMessages.InvalidName, value, MIN_RACE_NAME_SYMBOLS));
+                    throw new ArgumentException(string.Format(ExceptionMessages.InvalidName, value, 5));
                 }
 
                 this.name = value;
@@ -50,9 +47,9 @@ namespace EasterRaces.Models.Races.Entities
             }
             private set
             {
-                if (value < MIN_LAPS_VALUE)
+                if (value < 1)
                 {
-                    throw new ArgumentException(String.Format(ExceptionMessages.InvalidNumberOfLaps, MIN_LAPS_VALUE));
+                    throw new ArgumentException(string.Format(ExceptionMessages.InvalidNumberOfLaps, 1));
                 }
 
                 this.laps = value;
@@ -60,21 +57,20 @@ namespace EasterRaces.Models.Races.Entities
         }
 
         public IReadOnlyCollection<IDriver> Drivers => this.drivers;
+
         public void AddDriver(IDriver driver)
         {
             if (driver == null)
             {
-                throw new ArgumentNullException(nameof(IDriver), String.Format(ExceptionMessages.DriverInvalid));
+                throw new ArgumentNullException(string.Format(ExceptionMessages.DriverInvalid));
             }
-
-            if (!driver.CanParticipate)
+            else if (!driver.CanParticipate)
             {
-                throw new ArgumentException(String.Format(ExceptionMessages.DriverNotParticipate, driver.Name));
+                throw new ArgumentException(string.Format(ExceptionMessages.DriverNotParticipate, driver.Name));
             }
-
-            if (this.drivers.Any(d => d.Name == driver.Name))
+            else if (this.drivers.Any(d => d.Name != driver.Name))
             {
-                throw new ArgumentNullException(nameof(IDriver), String.Format(ExceptionMessages.DriverAlreadyAdded, driver.Name, this.Name));
+                throw new ArgumentNullException(string.Format(ExceptionMessages.DriverAlreadyAdded, driver.Name, this.Name));
             }
 
             this.drivers.Add(driver);
