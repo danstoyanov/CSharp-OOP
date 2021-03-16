@@ -8,6 +8,7 @@ using EasterRaces.Repositories.Entities;
 using EasterRaces.Models.Cars.Contracts;
 using EasterRaces.Models.Drivers.Entities;
 using EasterRaces.Models.Drivers.Contracts;
+using EasterRaces.Models.Races.Contracts;
 
 namespace EasterRaces.Core.Entities
 {
@@ -27,12 +28,12 @@ namespace EasterRaces.Core.Entities
         public string AddCarToDriver(string driverName, string carModel)
         {
 
-            if (this.drivers.GetAll().Any(d => d.Name != driverName))
+            if (!this.drivers.GetAll().Any(d => d.Name == driverName))
             {
                 throw new InvalidOperationException(string.Format(ExceptionMessages.DriverNotFound, driverName));
             }
 
-            if (this.cars.GetAll().Any(c => c.Model != carModel))
+            if (!this.cars.GetAll().Any(c => c.Model == carModel))
             {
                 throw new InvalidOperationException(string.Format(ExceptionMessages.CarNotFound, carModel));
             }
@@ -47,7 +48,22 @@ namespace EasterRaces.Core.Entities
 
         public string AddDriverToRace(string raceName, string driverName)
         {
-            throw new System.NotImplementedException();
+            if (!this.races.GetAll().Any(r => r.Name == raceName))
+            {
+                throw new InvalidOperationException(string.Format(ExceptionMessages.RaceNotFound, raceName));
+            }
+
+            if (!this.drivers.GetAll().Any(d => d.Name == driverName))
+            {
+                throw new InvalidOperationException(string.Format(ExceptionMessages.DriverNotFound, driverName));
+            }
+
+            IRace currentRace = this.races.GetAll().FirstOrDefault(r => r.Name == raceName);
+            IDriver currentDriver = this.drivers.GetAll().FirstOrDefault(d => d.Name == driverName);
+
+            currentRace.AddDriver(currentDriver);
+
+            return string.Format(OutputMessages.DriverAdded, driverName, raceName);
         }
 
         public string CreateCar(string type, string model, int horsePower)
