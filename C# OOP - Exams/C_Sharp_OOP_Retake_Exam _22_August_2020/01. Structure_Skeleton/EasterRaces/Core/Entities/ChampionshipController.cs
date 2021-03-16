@@ -6,6 +6,8 @@ using EasterRaces.Utilities.Messages;
 using EasterRaces.Models.Cars.Entities;
 using EasterRaces.Repositories.Entities;
 using EasterRaces.Models.Drivers.Entities;
+using EasterRaces.Models.Cars.Contracts;
+using EasterRaces.Models.Drivers.Contracts;
 
 namespace EasterRaces.Core.Entities
 {
@@ -24,19 +26,19 @@ namespace EasterRaces.Core.Entities
 
         public string AddCarToDriver(string driverName, string carModel)
         {
-            var currentDriver = this.drivers.GetAll().FirstOrDefault(d => d.Name == driverName);
 
-            if (currentDriver == null)
+            if (this.drivers.GetAll().Any(d => d.Name != driverName))
             {
                 throw new InvalidOperationException(string.Format(ExceptionMessages.DriverNotFound, driverName));
             }
 
-            var currentCarModel = this.cars.GetAll().FirstOrDefault(c => c.Model == carModel);
-
-            if (currentCarModel == null)
+            if (this.cars.GetAll().Any(c => c.Model != carModel))
             {
                 throw new InvalidOperationException(string.Format(ExceptionMessages.CarNotFound, carModel));
             }
+
+            ICar currentDriver = (ICar)this.drivers.GetAll().FirstOrDefault(d => d.Name == driverName);
+            IDriver currentCarModel = (IDriver)this.cars.GetAll().FirstOrDefault(c => c.Model == carModel);
 
             currentDriver.AddCar(currentCarModel);
 
