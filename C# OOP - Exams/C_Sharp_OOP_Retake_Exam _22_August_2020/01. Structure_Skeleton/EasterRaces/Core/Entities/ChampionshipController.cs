@@ -42,7 +42,9 @@ namespace EasterRaces.Core.Entities
 
             currentDriver.AddCar(currentCarModel);
 
-            return string.Format(OutputMessages.CarAdded, driverName, carModel);
+            string output = string.Format(OutputMessages.CarAdded, driverName, carModel);
+
+            return output;
         }
 
         public string AddDriverToRace(string raceName, string driverName)
