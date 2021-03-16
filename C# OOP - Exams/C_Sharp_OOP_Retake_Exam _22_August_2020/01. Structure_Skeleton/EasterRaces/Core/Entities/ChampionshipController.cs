@@ -37,8 +37,8 @@ namespace EasterRaces.Core.Entities
                 throw new InvalidOperationException(string.Format(ExceptionMessages.CarNotFound, carModel));
             }
 
-            ICar currentDriver = (ICar)this.drivers.GetAll().FirstOrDefault(d => d.Name == driverName);
-            IDriver currentCarModel = (IDriver)this.cars.GetAll().FirstOrDefault(c => c.Model == carModel);
+            ICar currentCarModel = this.cars.GetAll().FirstOrDefault(c => c.Model == carModel);
+            IDriver currentDriver = this.drivers.GetAll().FirstOrDefault(d => d.Name == driverName);
 
             currentDriver.AddCar(currentCarModel);
 
