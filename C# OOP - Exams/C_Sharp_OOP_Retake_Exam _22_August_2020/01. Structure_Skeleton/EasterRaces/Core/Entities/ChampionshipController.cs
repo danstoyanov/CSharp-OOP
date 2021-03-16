@@ -112,7 +112,17 @@ namespace EasterRaces.Core.Entities
 
         public string StartRace(string raceName)
         {
-            throw new System.NotImplementedException();
+            if (!this.races.GetAll().Any(r => r.Name == raceName))
+            {
+                throw new InvalidOperationException(string.Format(ExceptionMessages.RaceNotFound, raceName));
+            }
+
+            if (this.races.GetAll().Count < 3)
+            {
+                throw new InvalidOperationException(string.Format(ExceptionMessages.RaceInvalid, raceName, 3));
+            }
+
+            return "";
         }
     }
 }
