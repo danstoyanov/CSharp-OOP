@@ -6,10 +6,10 @@ using EasterRaces.Utilities.Messages;
 using EasterRaces.Models.Cars.Entities;
 using EasterRaces.Repositories.Entities;
 using EasterRaces.Models.Cars.Contracts;
+using EasterRaces.Models.Races.Entities;
+using EasterRaces.Models.Races.Contracts;
 using EasterRaces.Models.Drivers.Entities;
 using EasterRaces.Models.Drivers.Contracts;
-using EasterRaces.Models.Races.Contracts;
-using EasterRaces.Models.Races.Entities;
 
 namespace EasterRaces.Core.Entities
 {
@@ -100,7 +100,7 @@ namespace EasterRaces.Core.Entities
 
         public string CreateRace(string name, int laps)
         {
-            if (!this.races.GetAll().Any(r => r.Name == name))
+            if (this.races.GetAll().Any(r => r.Name == name))
             {
                 throw new InvalidOperationException(string.Format(ExceptionMessages.RaceExists, name));
             }
