@@ -5,8 +5,8 @@ using EasterRaces.Core.Contracts;
 using EasterRaces.Utilities.Messages;
 using EasterRaces.Models.Cars.Entities;
 using EasterRaces.Repositories.Entities;
-using EasterRaces.Models.Drivers.Entities;
 using EasterRaces.Models.Cars.Contracts;
+using EasterRaces.Models.Drivers.Entities;
 using EasterRaces.Models.Drivers.Contracts;
 
 namespace EasterRaces.Core.Entities
@@ -42,9 +42,7 @@ namespace EasterRaces.Core.Entities
 
             currentDriver.AddCar(currentCarModel);
 
-            string output = string.Format(OutputMessages.CarAdded, driverName, carModel);
-
-            return output;
+            return string.Format(OutputMessages.CarAdded, driverName, carModel);
         }
 
         public string AddDriverToRace(string raceName, string driverName)
