@@ -15,12 +15,24 @@ namespace EasterRaces.Repositories.Entities
             this.drivers = new List<IDriver>();
         }
 
-        public void Add(IDriver model) => this.drivers.Add(model);
+        public void Add(IDriver model)
+        {
+            this.drivers.Add(model);
+        }
 
-        public IReadOnlyCollection<IDriver> GetAll() => this.drivers.ToArray();
+        public IReadOnlyCollection<IDriver> GetAll()
+        {
+            return this.drivers.ToArray();
+        }
 
-        public IDriver GetByName(string name) => this.drivers.FirstOrDefault(d => d.Name == name);
+        public IDriver GetByName(string name)
+        {
+            return this.drivers.FirstOrDefault(d => d.Name == name);
+        }
 
-        public bool Remove(IDriver model) => this.drivers.Remove(model);
+        public bool Remove(IDriver model)
+        {
+            return this.drivers.Remove(model);
+        }
     }
 }

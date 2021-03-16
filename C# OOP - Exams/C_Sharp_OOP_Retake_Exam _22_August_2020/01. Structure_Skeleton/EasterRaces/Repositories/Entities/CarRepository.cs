@@ -12,15 +12,27 @@ namespace EasterRaces.Repositories.Entities
 
         public CarRepository()
         {
-            cars = new List<ICar>();
+            this.cars = new List<ICar>();
         }
 
-        public void Add(ICar model) => this.cars.Add(model);
+        public void Add(ICar model)
+        {
+            this.cars.Add(model);
+        }
 
-        public IReadOnlyCollection<ICar> GetAll() => this.cars.ToArray();
+        public IReadOnlyCollection<ICar> GetAll()
+        {
+            return this.cars.ToArray();
+        }
 
-        public ICar GetByName(string name) => this.cars.FirstOrDefault(c => c.Model == name);
+        public ICar GetByName(string name)
+        {
+            return this.cars.FirstOrDefault(c => c.Model == name);
+        }
 
-        public bool Remove(ICar model) => this.cars.Remove(model);
+        public bool Remove(ICar model)
+        {
+            return this.cars.Remove(model);
+        }
     }
 }

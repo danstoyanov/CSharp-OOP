@@ -15,12 +15,24 @@ namespace EasterRaces.Repositories.Entities
             this.races = new List<IRace>();
         }
 
-        public void Add(IRace model) => this.races.Add(model);
+        public void Add(IRace model)
+        {
+            this.races.Add(model);
+        }
 
-        public IReadOnlyCollection<IRace> GetAll() => this.races.ToArray();
+        public IReadOnlyCollection<IRace> GetAll()
+        {
+            return this.races.ToArray();
+        }
 
-        public IRace GetByName(string name) => this.races.FirstOrDefault(r => r.Name == name);
+        public IRace GetByName(string name)
+        {
+            return this.races.FirstOrDefault(r => r.Name == name);
+        }
 
-        public bool Remove(IRace model) => this.races.Remove(model);
+        public bool Remove(IRace model)
+        {
+            return this.races.Remove(model);
+        }
     }
 }
