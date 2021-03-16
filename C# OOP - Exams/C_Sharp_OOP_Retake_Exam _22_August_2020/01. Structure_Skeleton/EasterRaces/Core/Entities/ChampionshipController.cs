@@ -9,6 +9,7 @@ using EasterRaces.Models.Cars.Contracts;
 using EasterRaces.Models.Drivers.Entities;
 using EasterRaces.Models.Drivers.Contracts;
 using EasterRaces.Models.Races.Contracts;
+using EasterRaces.Models.Races.Entities;
 
 namespace EasterRaces.Core.Entities
 {
@@ -87,7 +88,7 @@ namespace EasterRaces.Core.Entities
 
         public string CreateDriver(string driverName)
         {
-            if (!this.drivers.GetAll().Any(d => d.Name == driverName))
+            if (this.drivers.GetAll().Any(d => d.Name == driverName))
             {
                 throw new ArgumentException(string.Format(ExceptionMessages.DriversExists, driverName));
             }
@@ -99,7 +100,14 @@ namespace EasterRaces.Core.Entities
 
         public string CreateRace(string name, int laps)
         {
-            throw new System.NotImplementedException();
+            if (!this.races.GetAll().Any(r => r.Name == name))
+            {
+                throw new InvalidOperationException(string.Format(ExceptionMessages.RaceExists, name));
+            }
+
+            this.races.Add(new Race(name, laps));
+
+            return string.Format(OutputMessages.RaceCreated, name);
         }
 
         public string StartRace(string raceName)
