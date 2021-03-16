@@ -3,6 +3,7 @@ using System.Linq;
 
 using EasterRaces.Core.Contracts;
 using EasterRaces.Utilities.Messages;
+using EasterRaces.Models.Cars.Entities;
 using EasterRaces.Repositories.Entities;
 using EasterRaces.Models.Drivers.Entities;
 
@@ -33,7 +34,21 @@ namespace EasterRaces.Core.Entities
 
         public string CreateCar(string type, string model, int horsePower)
         {
-            throw new System.NotImplementedException();
+            if (!this.cars.GetAll().Any(c => c.Model == model))
+            {
+                throw new ArgumentException(string.Format(ExceptionMessages.CarExists, model));
+            }
+
+            if (type == "Sports")
+            {
+                this.cars.Add(new SportsCar(model, horsePower));
+            }
+            else if (type == "Muscle")
+            {
+                this.cars.Add(new MuscleCar(model, horsePower));
+            }
+
+            return string.Format(OutputMessages.CarCreated, type, model);
         }
 
         public string CreateDriver(string driverName)
