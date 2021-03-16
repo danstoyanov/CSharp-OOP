@@ -24,7 +24,23 @@ namespace EasterRaces.Core.Entities
 
         public string AddCarToDriver(string driverName, string carModel)
         {
-            throw new System.NotImplementedException();
+            var currentDriver = this.drivers.GetAll().FirstOrDefault(d => d.Name == driverName);
+
+            if (currentDriver == null)
+            {
+                throw new InvalidOperationException(string.Format(ExceptionMessages.DriverNotFound, driverName));
+            }
+
+            var currentCarModel = this.cars.GetAll().FirstOrDefault(c => c.Model == carModel);
+
+            if (currentCarModel == null)
+            {
+                throw new InvalidOperationException(string.Format(ExceptionMessages.CarNotFound, carModel));
+            }
+
+            currentDriver.AddCar(currentCarModel);
+
+            return string.Format(OutputMessages.CarAdded, driverName, carModel);
         }
 
         public string AddDriverToRace(string raceName, string driverName)
