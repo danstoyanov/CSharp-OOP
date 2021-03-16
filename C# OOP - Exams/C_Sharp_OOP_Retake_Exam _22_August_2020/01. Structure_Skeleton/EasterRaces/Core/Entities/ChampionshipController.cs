@@ -69,7 +69,7 @@ namespace EasterRaces.Core.Entities
 
         public string CreateCar(string type, string model, int horsePower)
         {
-            if (!this.cars.GetAll().Any(c => c.Model == model))
+            if (this.cars.GetAll().Any(c => c.Model == model))
             {
                 throw new ArgumentException(string.Format(ExceptionMessages.CarExists, model));
             }
