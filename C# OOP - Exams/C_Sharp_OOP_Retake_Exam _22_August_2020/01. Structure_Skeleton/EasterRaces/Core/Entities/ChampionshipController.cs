@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
+using System.Collections.Generic;
 
 using EasterRaces.Core.Contracts;
 using EasterRaces.Utilities.Messages;
@@ -125,12 +126,35 @@ namespace EasterRaces.Core.Entities
 
             StringBuilder sb = new StringBuilder();
 
-            foreach (var item in this.races.GetAll())
+            IRace currentRace = this.races.GetAll().FirstOrDefault(r => r.Name == raceName);
+
+            List<IDriver> drivers = currentRace.Drivers
+                .ToList()
+                .OrderByDescending(d => d.Car.CalculateRacePoints(currentRace.Laps))
+                .Take(3)
+                .ToList();
+
+            for (int i = 0; i < drivers.Count; i++)
             {
-                
+                IDriver raceDriver = drivers[i];
+
+                if (i == 0)
+                {
+                    sb.AppendLine(string.Format(OutputMessages.DriverFirstPosition, raceDriver.Name, raceName));
+                }
+                else if (i == 1)
+                {
+                    sb.AppendLine(string.Format(OutputMessages.DriverSecondPosition, raceDriver.Name, raceName));
+                }
+                else if (i == 2)
+                {
+                    sb.AppendLine(string.Format(OutputMessages.DriverThirdPosition, raceDriver.Name, raceName));
+                }
             }
 
-            return "";
+            this.races.Remove(currentRace);
+
+            return sb.ToString().Trim();
         }
     }
 }
