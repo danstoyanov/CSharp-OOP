@@ -68,7 +68,7 @@ namespace EasterRaces.Models.Races.Entities
             {
                 throw new ArgumentException(string.Format(ExceptionMessages.DriverNotParticipate, driver.Name));
             }
-            else if (this.drivers.Any(d => d.Name != driver.Name))
+            else if (this.drivers.Any(d => d.Name == driver.Name))
             {
                 throw new ArgumentNullException(string.Format(ExceptionMessages.DriverAlreadyAdded, driver.Name, this.Name));
             }
