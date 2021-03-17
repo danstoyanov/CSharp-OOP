@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text;
 
 using EasterRaces.Core.Contracts;
 using EasterRaces.Utilities.Messages;
@@ -120,6 +121,13 @@ namespace EasterRaces.Core.Entities
             if (this.races.GetAll().Count < 3)
             {
                 throw new InvalidOperationException(string.Format(ExceptionMessages.RaceInvalid, raceName, 3));
+            }
+
+            StringBuilder sb = new StringBuilder();
+
+            foreach (var item in this.races.GetAll())
+            {
+                
             }
 
             return "";
