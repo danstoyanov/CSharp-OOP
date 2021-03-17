@@ -119,20 +119,20 @@ namespace EasterRaces.Core.Entities
                 throw new InvalidOperationException(string.Format(ExceptionMessages.RaceNotFound, raceName));
             }
 
-            if (this.races.GetAll().Count < 3)
+            IRace currentRace = this.races.GetAll().FirstOrDefault(r => r.Name == raceName);
+
+            if (currentRace.Drivers.Count < 3)
             {
                 throw new InvalidOperationException(string.Format(ExceptionMessages.RaceInvalid, raceName, 3));
             }
-
-            StringBuilder sb = new StringBuilder();
-
-            IRace currentRace = this.races.GetAll().FirstOrDefault(r => r.Name == raceName);
 
             List<IDriver> drivers = currentRace.Drivers
                 .ToList()
                 .OrderByDescending(d => d.Car.CalculateRacePoints(currentRace.Laps))
                 .Take(3)
                 .ToList();
+
+            StringBuilder sb = new StringBuilder();
 
             for (int i = 0; i < drivers.Count; i++)
             {
