@@ -22,7 +22,7 @@ namespace EasterRaces.Repositories.Entities
 
         public IReadOnlyCollection<IRace> GetAll()
         {
-            return this.races.ToArray();
+            return this.races;
         }
 
         public IRace GetByName(string name)

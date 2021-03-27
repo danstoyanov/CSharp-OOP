@@ -22,7 +22,7 @@ namespace EasterRaces.Repositories.Entities
 
         public IReadOnlyCollection<IDriver> GetAll()
         {
-            return this.drivers.ToArray();
+            return this.drivers;
         }
 
         public IDriver GetByName(string name)
