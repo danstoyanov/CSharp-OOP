@@ -8,18 +8,15 @@ namespace EasterRaces.Models.Cars.Entities
     public abstract class Car : ICar
     {
         private string model;
-        private int minHorsePower;
-        private int maxHorsePower;
         private int horsePower;
-        private double cubicCentimeters;
 
-        public Car(string model, int horsePower, double cubicCentimeters, int minHoursePower, int maxHoursePower)
+        public Car(string model, int horsePower, double cubicCentimeters, int minHorsePower, int maxHorsePower)
         {
             this.Model = model;
             this.HorsePower = horsePower;
             this.CubicCentimeters = cubicCentimeters;
-            this.MinHorsePower = minHoursePower;
-            this.MaxHorsePower = maxHoursePower;
+            this.MinHorsePower = minHorsePower;
+            this.MaxHorsePower = maxHorsePower;
         }
 
         public string Model
@@ -56,47 +53,15 @@ namespace EasterRaces.Models.Cars.Entities
             }
         }
 
-        public int MinHorsePower
-        {
-            get
-            {
-                return this.minHorsePower;
-            }
-            private set
-            {
-                this.minHorsePower = value;
-            }
-        }
+        public int MinHorsePower { get; private set; }
 
-        public int MaxHorsePower
-        {
-            get
-            {
-                return this.maxHorsePower;
-            }
-            private set
-            {
-                this.horsePower = value;
-            }
-        }
+        public int MaxHorsePower { get; private set; }
 
-        public double CubicCentimeters
-        {
-            get
-            {
-                return this.cubicCentimeters;
-            }
-            private set
-            {
-                cubicCentimeters = value;
-            }
-        }
+        public double CubicCentimeters { get; private set; }
 
         public double CalculateRacePoints(int laps)
         {
-            double calculateRacePoints = this.CubicCentimeters / this.HorsePower * laps;
-
-            return calculateRacePoints;
+            return this.CubicCentimeters / this.HorsePower * laps;
         }
     }
 }
