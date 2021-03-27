@@ -11,7 +11,6 @@ namespace EasterRaces.Models.Races.Entities
     public class Race : IRace
     {
         private readonly List<IDriver> drivers;
-
         private string name;
         private int laps;
 
@@ -62,15 +61,17 @@ namespace EasterRaces.Models.Races.Entities
         {
             if (driver == null)
             {
-                throw new ArgumentNullException(string.Format(ExceptionMessages.DriverInvalid));
+                throw new ArgumentException(string.Format(ExceptionMessages.DriverInvalid));
             }
-            else if (!driver.CanParticipate)
+
+            if (!driver.CanParticipate)
             {
                 throw new ArgumentException(string.Format(ExceptionMessages.DriverNotParticipate, driver.Name));
             }
-            else if (this.drivers.Any(d => d.Name == driver.Name))
+
+            if (this.drivers.Exists(d => d.Name == driver.Name))
             {
-                throw new ArgumentNullException(string.Format(ExceptionMessages.DriverAlreadyAdded, driver.Name, this.Name));
+                throw new ArgumentException(string.Format(ExceptionMessages.DriverAlreadyAdded, driver.Name, this.Name));
             }
 
             this.drivers.Add(driver);
