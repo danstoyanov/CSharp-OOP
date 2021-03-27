@@ -23,7 +23,7 @@ namespace EasterRaces.Models.Drivers.Entities
             }
             private set
             {
-                if (string.IsNullOrEmpty(value) && value.Length < 5)
+                if (string.IsNullOrEmpty(value) || value.Length < 5)
                 {
                     throw new ArgumentException(string.Format(ExceptionMessages.InvalidName, value, 5));
                 }
@@ -42,12 +42,10 @@ namespace EasterRaces.Models.Drivers.Entities
         {
             if (car == null)
             {
-                throw new ArgumentNullException(string.Format(ExceptionMessages.CarInvalid));
+                throw new ArgumentException(string.Format(ExceptionMessages.CarInvalid));
             }
-            else
-            {
-                this.Car = car;
-            }
+
+            this.Car = car;
         }
 
         public void WinRace()
