@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Structure.Models.Test
 {
-    class Test
+    public class Test
     {
+
     }
 }
