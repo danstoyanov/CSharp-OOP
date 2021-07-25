@@ -6,6 +6,6 @@ namespace Structure.Models.Test
 {
     public class Test
     {
-        public int Test { get; set; }
+        public int CurrTest { get; set; }
     }
 }
