@@ -6,7 +6,7 @@ namespace Structure
     {
         static void Main()
         {
-
+            string name = "Daniel";
         }
     }
 }
