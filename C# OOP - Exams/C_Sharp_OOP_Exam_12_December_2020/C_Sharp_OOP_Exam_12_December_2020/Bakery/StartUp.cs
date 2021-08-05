@@ -9,5 +9,10 @@
             var engine = new Engine();
             engine.Run();
         }
+
+        private static void TestCode()
+        {
+            System.Console.WriteLine("We test the App !");
+        }
     }
 }
