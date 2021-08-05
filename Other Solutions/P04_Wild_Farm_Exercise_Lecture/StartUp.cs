@@ -7,7 +7,7 @@ namespace P04_Wild_Farm_Exercise_Lecture
     {
         static void Main()
         {
-
+            Console.WriteLine();
         }
     }
 }
