@@ -9,7 +9,6 @@ namespace P01_Vehicles
         static void Main()
         {
             var command = "Start";
-            PrintTest(comm);
             Engine engine = new Engine();
             engine.Run();
         }
