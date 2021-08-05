@@ -6,6 +6,9 @@
     {
         static void Main()
         {
+            string numbers;
+
+
             string name = Console.ReadLine();
             int age = int.Parse(Console.ReadLine());
 
